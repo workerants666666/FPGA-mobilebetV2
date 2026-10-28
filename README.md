@@ -1,0 +1,2 @@
+# FPGA-mobilebetV2
+项目基于xilinx的fpga以及其配套ide, 提供了hls代码逻辑以及vivado参考应用工程
