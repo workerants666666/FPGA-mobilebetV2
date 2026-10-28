@@ -1,0 +1,5 @@
+workspace/
+artifacts/
+tests/.build/
+*.log
+dfx_runtime.txt

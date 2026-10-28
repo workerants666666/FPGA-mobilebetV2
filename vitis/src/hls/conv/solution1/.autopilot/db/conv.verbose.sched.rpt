@@ -1,0 +1,546 @@
+
+
+================================================================
+== Vivado HLS Report for 'conv'
+================================================================
+* Date:           Wed Mar  9 13:32:56 2022
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        conv
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns | 4.539 ns |   0.62 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                  |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |             Loop Name            |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- memcpy.bias_buff.V.addr.bias.V  |       32|       32|         2|          1|          1|    32|    yes   |
+        |- Loop 2                          |        ?|        ?|     29245|          -|          -|     ?|    no    |
+        +----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 18
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 9 10 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 11 10 
+10 --> 9 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 16 
+15 --> 17 
+16 --> 17 
+17 --> 13 18 
+18 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%bias_buff_31_V = alloca i16"   --->   Operation 19 'alloca' 'bias_buff_31_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%bias_buff_31_V_1 = alloca i16"   --->   Operation 20 'alloca' 'bias_buff_31_V_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%bias_buff_31_V_2 = alloca i16"   --->   Operation 21 'alloca' 'bias_buff_31_V_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%bias_buff_31_V_3 = alloca i16"   --->   Operation 22 'alloca' 'bias_buff_31_V_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%bias_buff_31_V_4 = alloca i16"   --->   Operation 23 'alloca' 'bias_buff_31_V_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%bias_buff_31_V_5 = alloca i16"   --->   Operation 24 'alloca' 'bias_buff_31_V_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%bias_buff_31_V_6 = alloca i16"   --->   Operation 25 'alloca' 'bias_buff_31_V_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%bias_buff_31_V_7 = alloca i16"   --->   Operation 26 'alloca' 'bias_buff_31_V_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%bias_buff_31_V_8 = alloca i16"   --->   Operation 27 'alloca' 'bias_buff_31_V_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%bias_buff_31_V_9 = alloca i16"   --->   Operation 28 'alloca' 'bias_buff_31_V_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%bias_buff_31_V_10 = alloca i16"   --->   Operation 29 'alloca' 'bias_buff_31_V_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%bias_buff_31_V_11 = alloca i16"   --->   Operation 30 'alloca' 'bias_buff_31_V_11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%bias_buff_31_V_12 = alloca i16"   --->   Operation 31 'alloca' 'bias_buff_31_V_12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%bias_buff_31_V_13 = alloca i16"   --->   Operation 32 'alloca' 'bias_buff_31_V_13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%bias_buff_31_V_14 = alloca i16"   --->   Operation 33 'alloca' 'bias_buff_31_V_14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%bias_buff_31_V_15 = alloca i16"   --->   Operation 34 'alloca' 'bias_buff_31_V_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%bias_buff_31_V_16 = alloca i16"   --->   Operation 35 'alloca' 'bias_buff_31_V_16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%bias_buff_31_V_17 = alloca i16"   --->   Operation 36 'alloca' 'bias_buff_31_V_17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%bias_buff_31_V_18 = alloca i16"   --->   Operation 37 'alloca' 'bias_buff_31_V_18' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%bias_buff_31_V_19 = alloca i16"   --->   Operation 38 'alloca' 'bias_buff_31_V_19' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%bias_buff_31_V_20 = alloca i16"   --->   Operation 39 'alloca' 'bias_buff_31_V_20' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%bias_buff_31_V_21 = alloca i16"   --->   Operation 40 'alloca' 'bias_buff_31_V_21' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%bias_buff_31_V_22 = alloca i16"   --->   Operation 41 'alloca' 'bias_buff_31_V_22' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%bias_buff_31_V_23 = alloca i16"   --->   Operation 42 'alloca' 'bias_buff_31_V_23' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%bias_buff_31_V_24 = alloca i16"   --->   Operation 43 'alloca' 'bias_buff_31_V_24' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%bias_buff_31_V_25 = alloca i16"   --->   Operation 44 'alloca' 'bias_buff_31_V_25' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%bias_buff_31_V_26 = alloca i16"   --->   Operation 45 'alloca' 'bias_buff_31_V_26' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%bias_buff_31_V_27 = alloca i16"   --->   Operation 46 'alloca' 'bias_buff_31_V_27' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%bias_buff_31_V_28 = alloca i16"   --->   Operation 47 'alloca' 'bias_buff_31_V_28' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%bias_buff_31_V_29 = alloca i16"   --->   Operation 48 'alloca' 'bias_buff_31_V_29' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%bias_buff_31_V_30 = alloca i16"   --->   Operation 49 'alloca' 'bias_buff_31_V_30' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%bias_buff_31_V_31 = alloca i16"   --->   Operation 50 'alloca' 'bias_buff_31_V_31' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (1.00ns)   --->   "%out_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %out_V)"   --->   Operation 51 'read' 'out_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 52 [1/1] (1.00ns)   --->   "%bias_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %bias_V)"   --->   Operation 52 'read' 'bias_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 53 [1/1] (1.00ns)   --->   "%weight_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %weight_V)"   --->   Operation 53 'read' 'weight_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 54 [1/1] (1.00ns)   --->   "%in3_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %in3_V)"   --->   Operation 54 'read' 'in3_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 55 [1/1] (1.00ns)   --->   "%in2_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %in2_V)"   --->   Operation 55 'read' 'in2_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 56 [1/1] (1.00ns)   --->   "%in1_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %in1_V)"   --->   Operation 56 'read' 'in1_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%out_V1 = call i29 @_ssdm_op_PartSelect.i29.i32.i32.i32(i32 %out_V_read, i32 3, i32 31)"   --->   Operation 57 'partselect' 'out_V1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%bias_V9 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %bias_V_read, i32 1, i32 31)"   --->   Operation 58 'partselect' 'bias_V9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%empty = zext i31 %bias_V9 to i64"   --->   Operation 59 'zext' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%W_addr = getelementptr i16* %W, i64 %empty"   --->   Operation 60 'getelementptr' 'W_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%weight_V7 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %weight_V_read, i32 1, i32 31)"   --->   Operation 61 'partselect' 'weight_V7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%in3_V5 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %in3_V_read, i32 1, i32 31)"   --->   Operation 62 'partselect' 'in3_V5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%in2_V3 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %in2_V_read, i32 1, i32 31)"   --->   Operation 63 'partselect' 'in2_V3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%in1_V1 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %in1_V_read, i32 1, i32 31)"   --->   Operation 64 'partselect' 'in1_V1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%fm_in_buff1_0_V = alloca [3249 x i16], align 2" [conv/conv.cpp:112]   --->   Operation 65 'alloca' 'fm_in_buff1_0_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%fm_in_buff1_1_V = alloca [3249 x i16], align 2" [conv/conv.cpp:112]   --->   Operation 66 'alloca' 'fm_in_buff1_1_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%fm_in_buff1_2_V = alloca [3249 x i16], align 2" [conv/conv.cpp:112]   --->   Operation 67 'alloca' 'fm_in_buff1_2_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%fm_in_buff2_0_V = alloca [3249 x i16], align 2" [conv/conv.cpp:113]   --->   Operation 68 'alloca' 'fm_in_buff2_0_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%fm_in_buff2_1_V = alloca [3249 x i16], align 2" [conv/conv.cpp:113]   --->   Operation 69 'alloca' 'fm_in_buff2_1_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%fm_in_buff2_2_V = alloca [3249 x i16], align 2" [conv/conv.cpp:113]   --->   Operation 70 'alloca' 'fm_in_buff2_2_V' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 4.37>
+ST_2 : Operation 71 [7/7] (4.37ns)   --->   "%W_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %W_addr, i32 32)" [conv/conv.cpp:123]   --->   Operation 71 'readreq' 'W_addr_rd_req' <Predicate = true> <Delay = 4.37> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 3 <SV = 2> <Delay = 4.37>
+ST_3 : Operation 72 [6/7] (4.37ns)   --->   "%W_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %W_addr, i32 32)" [conv/conv.cpp:123]   --->   Operation 72 'readreq' 'W_addr_rd_req' <Predicate = true> <Delay = 4.37> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 4.37>
+ST_4 : Operation 73 [5/7] (4.37ns)   --->   "%W_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %W_addr, i32 32)" [conv/conv.cpp:123]   --->   Operation 73 'readreq' 'W_addr_rd_req' <Predicate = true> <Delay = 4.37> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 4.37>
+ST_5 : Operation 74 [4/7] (4.37ns)   --->   "%W_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %W_addr, i32 32)" [conv/conv.cpp:123]   --->   Operation 74 'readreq' 'W_addr_rd_req' <Predicate = true> <Delay = 4.37> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 4.37>
+ST_6 : Operation 75 [3/7] (4.37ns)   --->   "%W_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %W_addr, i32 32)" [conv/conv.cpp:123]   --->   Operation 75 'readreq' 'W_addr_rd_req' <Predicate = true> <Delay = 4.37> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 4.37>
+ST_7 : Operation 76 [2/7] (4.37ns)   --->   "%W_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %W_addr, i32 32)" [conv/conv.cpp:123]   --->   Operation 76 'readreq' 'W_addr_rd_req' <Predicate = true> <Delay = 4.37> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 4.37>
+ST_8 : Operation 77 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %OUT_r), !map !123"   --->   Operation 77 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 78 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16* %W), !map !129"   --->   Operation 78 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 79 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16* %IN3), !map !138"   --->   Operation 79 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 80 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16* %IN2), !map !144"   --->   Operation 80 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 81 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16* %IN1), !map !148"   --->   Operation 81 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 82 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([5 x i8]* @conv_str) nounwind"   --->   Operation 82 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 83 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str7, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [5 x i8]* @p_str8, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [conv/conv.cpp:104]   --->   Operation 83 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 84 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %OUT_r, [6 x i8]* @p_str9, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 100352, [4 x i8]* @p_str10, [6 x i8]* @p_str11, [1 x i8]* @p_str1, i32 16, i32 16, i32 32, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [conv/conv.cpp:105]   --->   Operation 84 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 85 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %out_V, [10 x i8]* @mode16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 100352, [1 x i8]* @bundle17, [6 x i8]* @p_str11, [1 x i8]* @p_str1, i32 16, i32 16, i32 32, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [conv/conv.cpp:105]   --->   Operation 85 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 86 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %bias_V, [10 x i8]* @mode14, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 32, [1 x i8]* @bundle15, [6 x i8]* @p_str11, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [conv/conv.cpp:106]   --->   Operation 86 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 87 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %W, [6 x i8]* @p_str9, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 864, [2 x i8]* @p_str12, [6 x i8]* @p_str11, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [conv/conv.cpp:107]   --->   Operation 87 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 88 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %weight_V, [10 x i8]* @mode12, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 864, [1 x i8]* @bundle13, [6 x i8]* @p_str11, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [conv/conv.cpp:107]   --->   Operation 88 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 89 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %IN1, [6 x i8]* @p_str9, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 151040, [4 x i8]* @p_str13, [6 x i8]* @p_str11, [1 x i8]* @p_str1, i32 16, i32 16, i32 64, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [conv/conv.cpp:108]   --->   Operation 89 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 90 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %in1_V, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 151040, [1 x i8]* @bundle, [6 x i8]* @p_str11, [1 x i8]* @p_str1, i32 16, i32 16, i32 64, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [conv/conv.cpp:108]   --->   Operation 90 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 91 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %IN2, [6 x i8]* @p_str9, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 151040, [4 x i8]* @p_str14, [6 x i8]* @p_str11, [1 x i8]* @p_str1, i32 16, i32 16, i32 64, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [conv/conv.cpp:109]   --->   Operation 91 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 92 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %in2_V, [10 x i8]* @mode8, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 151040, [1 x i8]* @bundle9, [6 x i8]* @p_str11, [1 x i8]* @p_str1, i32 16, i32 16, i32 64, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [conv/conv.cpp:109]   --->   Operation 92 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 93 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %IN3, [6 x i8]* @p_str9, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 151040, [4 x i8]* @p_str15, [6 x i8]* @p_str11, [1 x i8]* @p_str1, i32 16, i32 16, i32 64, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [conv/conv.cpp:110]   --->   Operation 93 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 94 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %in3_V, [10 x i8]* @mode10, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 151040, [1 x i8]* @bundle11, [6 x i8]* @p_str11, [1 x i8]* @p_str1, i32 16, i32 16, i32 64, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [conv/conv.cpp:110]   --->   Operation 94 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 95 [1/7] (4.37ns)   --->   "%W_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %W_addr, i32 32)" [conv/conv.cpp:123]   --->   Operation 95 'readreq' 'W_addr_rd_req' <Predicate = true> <Delay = 4.37> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 96 [1/1] (0.46ns)   --->   "br label %burst.rd.header" [conv/conv.cpp:123]   --->   Operation 96 'br' <Predicate = true> <Delay = 0.46>
+
+State 9 <SV = 8> <Delay = 1.28>
+ST_9 : Operation 97 [1/1] (0.00ns)   --->   "%phi_ln123 = phi i6 [ 0, %arrayctor.loop7.preheader ], [ %add_ln123, %burstread.region_end ]" [conv/conv.cpp:123]   --->   Operation 97 'phi' 'phi_ln123' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 98 [1/1] (1.07ns)   --->   "%icmp_ln123 = icmp eq i6 %phi_ln123, -32" [conv/conv.cpp:123]   --->   Operation 98 'icmp' 'icmp_ln123' <Predicate = true> <Delay = 1.07> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.96> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 99 [1/1] (0.00ns)   --->   "%empty_60 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32)"   --->   Operation 99 'speclooptripcount' 'empty_60' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 100 [1/1] (1.28ns)   --->   "%add_ln123 = add i6 %phi_ln123, 1" [conv/conv.cpp:123]   --->   Operation 100 'add' 'add_ln123' <Predicate = true> <Delay = 1.28> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 101 [1/1] (0.00ns)   --->   "br i1 %icmp_ln123, label %burst.rd.end, label %burstread.region_begin" [conv/conv.cpp:123]   --->   Operation 101 'br' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 102 [1/1] (0.00ns)   --->   "%trunc_ln123 = trunc i6 %phi_ln123 to i5" [conv/conv.cpp:123]   --->   Operation 102 'trunc' 'trunc_ln123' <Predicate = (!icmp_ln123)> <Delay = 0.00>
+ST_9 : Operation 103 [1/1] (1.06ns)   --->   "switch i5 %trunc_ln123, label %branch31 [
+    i5 0, label %burstread.region_begin.burstread.region_end_crit_edge
+    i5 1, label %branch1
+    i5 2, label %branch2
+    i5 3, label %branch3
+    i5 4, label %branch4
+    i5 5, label %branch5
+    i5 6, label %branch6
+    i5 7, label %branch7
+    i5 8, label %branch8
+    i5 9, label %branch9
+    i5 10, label %branch10
+    i5 11, label %branch11
+    i5 12, label %branch12
+    i5 13, label %branch13
+    i5 14, label %branch14
+    i5 15, label %branch15
+    i5 -16, label %branch16
+    i5 -15, label %branch17
+    i5 -14, label %branch18
+    i5 -13, label %branch19
+    i5 -12, label %branch20
+    i5 -11, label %branch21
+    i5 -10, label %branch22
+    i5 -9, label %branch23
+    i5 -8, label %branch24
+    i5 -7, label %branch25
+    i5 -6, label %branch26
+    i5 -5, label %branch27
+    i5 -4, label %branch28
+    i5 -3, label %branch29
+    i5 -2, label %branch30
+  ]" [conv/conv.cpp:123]   --->   Operation 103 'switch' <Predicate = (!icmp_ln123)> <Delay = 1.06>
+ST_9 : Operation 104 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 104 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 30)> <Delay = 0.00>
+ST_9 : Operation 105 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 105 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 29)> <Delay = 0.00>
+ST_9 : Operation 106 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 106 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 28)> <Delay = 0.00>
+ST_9 : Operation 107 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 107 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 27)> <Delay = 0.00>
+ST_9 : Operation 108 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 108 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 26)> <Delay = 0.00>
+ST_9 : Operation 109 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 109 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 25)> <Delay = 0.00>
+ST_9 : Operation 110 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 110 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 24)> <Delay = 0.00>
+ST_9 : Operation 111 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 111 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 23)> <Delay = 0.00>
+ST_9 : Operation 112 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 112 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 22)> <Delay = 0.00>
+ST_9 : Operation 113 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 113 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 21)> <Delay = 0.00>
+ST_9 : Operation 114 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 114 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 20)> <Delay = 0.00>
+ST_9 : Operation 115 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 115 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 19)> <Delay = 0.00>
+ST_9 : Operation 116 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 116 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 18)> <Delay = 0.00>
+ST_9 : Operation 117 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 117 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 17)> <Delay = 0.00>
+ST_9 : Operation 118 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 118 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 16)> <Delay = 0.00>
+ST_9 : Operation 119 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 119 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 15)> <Delay = 0.00>
+ST_9 : Operation 120 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 120 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 14)> <Delay = 0.00>
+ST_9 : Operation 121 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 121 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 13)> <Delay = 0.00>
+ST_9 : Operation 122 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 122 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 12)> <Delay = 0.00>
+ST_9 : Operation 123 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 123 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 11)> <Delay = 0.00>
+ST_9 : Operation 124 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 124 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 10)> <Delay = 0.00>
+ST_9 : Operation 125 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 125 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 9)> <Delay = 0.00>
+ST_9 : Operation 126 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 126 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 8)> <Delay = 0.00>
+ST_9 : Operation 127 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 127 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 7)> <Delay = 0.00>
+ST_9 : Operation 128 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 128 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 6)> <Delay = 0.00>
+ST_9 : Operation 129 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 129 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 5)> <Delay = 0.00>
+ST_9 : Operation 130 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 130 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 4)> <Delay = 0.00>
+ST_9 : Operation 131 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 131 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 3)> <Delay = 0.00>
+ST_9 : Operation 132 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 132 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 2)> <Delay = 0.00>
+ST_9 : Operation 133 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 133 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 1)> <Delay = 0.00>
+ST_9 : Operation 134 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 134 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 0)> <Delay = 0.00>
+ST_9 : Operation 135 [1/1] (0.00ns)   --->   "br label %burstread.region_end" [conv/conv.cpp:123]   --->   Operation 135 'br' <Predicate = (!icmp_ln123 & trunc_ln123 == 31)> <Delay = 0.00>
+
+State 10 <SV = 9> <Delay = 4.37>
+ST_10 : Operation 136 [1/1] (0.00ns)   --->   "%burstread_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s)" [conv/conv.cpp:123]   --->   Operation 136 'specregionbegin' 'burstread_rbegin' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 137 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str39)" [conv/conv.cpp:123]   --->   Operation 137 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 138 [1/1] (0.00ns)   --->   "%empty_61 = call i32 (...)* @_ssdm_op_SpecLoopName([31 x i8]* @memcpy_OC_bias_buff_s)" [conv/conv.cpp:123]   --->   Operation 138 'specloopname' 'empty_61' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 139 [1/1] (4.37ns)   --->   "%bias_buff_0_V = call i16 @_ssdm_op_Read.m_axi.i16P(i16* %W_addr)" [conv/conv.cpp:123]   --->   Operation 139 'read' 'bias_buff_0_V' <Predicate = true> <Delay = 4.37> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 140 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_30" [conv/conv.cpp:123]   --->   Operation 140 'store' <Predicate = (trunc_ln123 == 30)> <Delay = 0.00>
+ST_10 : Operation 141 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_29" [conv/conv.cpp:123]   --->   Operation 141 'store' <Predicate = (trunc_ln123 == 29)> <Delay = 0.00>
+ST_10 : Operation 142 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_28" [conv/conv.cpp:123]   --->   Operation 142 'store' <Predicate = (trunc_ln123 == 28)> <Delay = 0.00>
+ST_10 : Operation 143 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_27" [conv/conv.cpp:123]   --->   Operation 143 'store' <Predicate = (trunc_ln123 == 27)> <Delay = 0.00>
+ST_10 : Operation 144 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_26" [conv/conv.cpp:123]   --->   Operation 144 'store' <Predicate = (trunc_ln123 == 26)> <Delay = 0.00>
+ST_10 : Operation 145 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_25" [conv/conv.cpp:123]   --->   Operation 145 'store' <Predicate = (trunc_ln123 == 25)> <Delay = 0.00>
+ST_10 : Operation 146 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_24" [conv/conv.cpp:123]   --->   Operation 146 'store' <Predicate = (trunc_ln123 == 24)> <Delay = 0.00>
+ST_10 : Operation 147 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_23" [conv/conv.cpp:123]   --->   Operation 147 'store' <Predicate = (trunc_ln123 == 23)> <Delay = 0.00>
+ST_10 : Operation 148 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_22" [conv/conv.cpp:123]   --->   Operation 148 'store' <Predicate = (trunc_ln123 == 22)> <Delay = 0.00>
+ST_10 : Operation 149 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_21" [conv/conv.cpp:123]   --->   Operation 149 'store' <Predicate = (trunc_ln123 == 21)> <Delay = 0.00>
+ST_10 : Operation 150 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_20" [conv/conv.cpp:123]   --->   Operation 150 'store' <Predicate = (trunc_ln123 == 20)> <Delay = 0.00>
+ST_10 : Operation 151 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_19" [conv/conv.cpp:123]   --->   Operation 151 'store' <Predicate = (trunc_ln123 == 19)> <Delay = 0.00>
+ST_10 : Operation 152 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_18" [conv/conv.cpp:123]   --->   Operation 152 'store' <Predicate = (trunc_ln123 == 18)> <Delay = 0.00>
+ST_10 : Operation 153 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_17" [conv/conv.cpp:123]   --->   Operation 153 'store' <Predicate = (trunc_ln123 == 17)> <Delay = 0.00>
+ST_10 : Operation 154 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_16" [conv/conv.cpp:123]   --->   Operation 154 'store' <Predicate = (trunc_ln123 == 16)> <Delay = 0.00>
+ST_10 : Operation 155 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_15" [conv/conv.cpp:123]   --->   Operation 155 'store' <Predicate = (trunc_ln123 == 15)> <Delay = 0.00>
+ST_10 : Operation 156 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_14" [conv/conv.cpp:123]   --->   Operation 156 'store' <Predicate = (trunc_ln123 == 14)> <Delay = 0.00>
+ST_10 : Operation 157 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_13" [conv/conv.cpp:123]   --->   Operation 157 'store' <Predicate = (trunc_ln123 == 13)> <Delay = 0.00>
+ST_10 : Operation 158 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_12" [conv/conv.cpp:123]   --->   Operation 158 'store' <Predicate = (trunc_ln123 == 12)> <Delay = 0.00>
+ST_10 : Operation 159 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_11" [conv/conv.cpp:123]   --->   Operation 159 'store' <Predicate = (trunc_ln123 == 11)> <Delay = 0.00>
+ST_10 : Operation 160 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_10" [conv/conv.cpp:123]   --->   Operation 160 'store' <Predicate = (trunc_ln123 == 10)> <Delay = 0.00>
+ST_10 : Operation 161 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_9" [conv/conv.cpp:123]   --->   Operation 161 'store' <Predicate = (trunc_ln123 == 9)> <Delay = 0.00>
+ST_10 : Operation 162 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_8" [conv/conv.cpp:123]   --->   Operation 162 'store' <Predicate = (trunc_ln123 == 8)> <Delay = 0.00>
+ST_10 : Operation 163 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_7" [conv/conv.cpp:123]   --->   Operation 163 'store' <Predicate = (trunc_ln123 == 7)> <Delay = 0.00>
+ST_10 : Operation 164 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_6" [conv/conv.cpp:123]   --->   Operation 164 'store' <Predicate = (trunc_ln123 == 6)> <Delay = 0.00>
+ST_10 : Operation 165 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_5" [conv/conv.cpp:123]   --->   Operation 165 'store' <Predicate = (trunc_ln123 == 5)> <Delay = 0.00>
+ST_10 : Operation 166 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_4" [conv/conv.cpp:123]   --->   Operation 166 'store' <Predicate = (trunc_ln123 == 4)> <Delay = 0.00>
+ST_10 : Operation 167 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_3" [conv/conv.cpp:123]   --->   Operation 167 'store' <Predicate = (trunc_ln123 == 3)> <Delay = 0.00>
+ST_10 : Operation 168 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_2" [conv/conv.cpp:123]   --->   Operation 168 'store' <Predicate = (trunc_ln123 == 2)> <Delay = 0.00>
+ST_10 : Operation 169 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_1" [conv/conv.cpp:123]   --->   Operation 169 'store' <Predicate = (trunc_ln123 == 1)> <Delay = 0.00>
+ST_10 : Operation 170 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V" [conv/conv.cpp:123]   --->   Operation 170 'store' <Predicate = (trunc_ln123 == 0)> <Delay = 0.00>
+ST_10 : Operation 171 [1/1] (0.00ns)   --->   "store i16 %bias_buff_0_V, i16* %bias_buff_31_V_31" [conv/conv.cpp:123]   --->   Operation 171 'store' <Predicate = (trunc_ln123 == 31)> <Delay = 0.00>
+ST_10 : Operation 172 [1/1] (0.00ns)   --->   "%burstread_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin)" [conv/conv.cpp:123]   --->   Operation 172 'specregionend' 'burstread_rend' <Predicate = (!icmp_ln123)> <Delay = 0.00>
+ST_10 : Operation 173 [1/1] (0.00ns)   --->   "br label %burst.rd.header" [conv/conv.cpp:123]   --->   Operation 173 'br' <Predicate = (!icmp_ln123)> <Delay = 0.00>
+
+State 11 <SV = 9> <Delay = 2.35>
+ST_11 : Operation 174 [2/2] (2.35ns)   --->   "call fastcc void @load_input(i16* %IN1, i31 %in1_V1, i16* %IN2, i31 %in2_V3, i16* %IN3, i31 %in3_V5, [3249 x i16]* nocapture %fm_in_buff1_0_V, [3249 x i16]* nocapture %fm_in_buff1_1_V, [3249 x i16]* nocapture %fm_in_buff1_2_V, i16 zeroext 0, i16 zeroext 0)" [conv/conv.cpp:130]   --->   Operation 174 'call' <Predicate = true> <Delay = 2.35> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 10> <Delay = 0.46>
+ST_12 : Operation 175 [1/2] (0.00ns)   --->   "call fastcc void @load_input(i16* %IN1, i31 %in1_V1, i16* %IN2, i31 %in2_V3, i16* %IN3, i31 %in3_V5, [3249 x i16]* nocapture %fm_in_buff1_0_V, [3249 x i16]* nocapture %fm_in_buff1_1_V, [3249 x i16]* nocapture %fm_in_buff1_2_V, i16 zeroext 0, i16 zeroext 0)" [conv/conv.cpp:130]   --->   Operation 175 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 176 [1/1] (0.46ns)   --->   "br label %0" [conv/conv.cpp:131]   --->   Operation 176 'br' <Predicate = true> <Delay = 0.46>
+
+State 13 <SV = 11> <Delay = 3.86>
+ST_13 : Operation 177 [1/1] (0.00ns)   --->   "%row_assign = phi i32 [ 0, %burst.rd.end ], [ %row, %._crit_edge ]"   --->   Operation 177 'phi' 'row_assign' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 178 [1/1] (0.00ns)   --->   "%col_assign = phi i32 [ 0, %burst.rd.end ], [ %col, %._crit_edge ]"   --->   Operation 178 'phi' 'col_assign' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 179 [1/1] (1.89ns)   --->   "%add_ln93 = add nsw i32 28, %col_assign" [conv/conv.cpp:93->conv/conv.cpp:132]   --->   Operation 179 'add' 'add_ln93' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 180 [1/1] (1.96ns)   --->   "%icmp_ln93 = icmp slt i32 %add_ln93, 112" [conv/conv.cpp:93->conv/conv.cpp:132]   --->   Operation 180 'icmp' 'icmp_ln93' <Predicate = true> <Delay = 1.96> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.96> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 181 [1/1] (1.89ns)   --->   "%add_ln94 = add nsw i32 28, %row_assign" [conv/conv.cpp:94->conv/conv.cpp:132]   --->   Operation 181 'add' 'add_ln94' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 12> <Delay = 3.06>
+ST_14 : Operation 182 [1/1] (0.00ns)   --->   "%pp_0 = phi i1 [ true, %burst.rd.end ], [ %pp_1, %._crit_edge ]"   --->   Operation 182 'phi' 'pp_0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 183 [1/1] (0.70ns)   --->   "%row = select i1 %icmp_ln93, i32 %row_assign, i32 %add_ln94" [conv/conv.cpp:93->conv/conv.cpp:132]   --->   Operation 183 'select' 'row' <Predicate = true> <Delay = 0.70> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_14 : Operation 184 [1/1] (0.70ns)   --->   "%col = select i1 %icmp_ln93, i32 %add_ln93, i32 0" [conv/conv.cpp:93->conv/conv.cpp:132]   --->   Operation 184 'select' 'col' <Predicate = true> <Delay = 0.70> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_14 : Operation 185 [1/1] (0.00ns)   --->   "%trunc_ln137 = trunc i32 %row to i16" [conv/conv.cpp:137]   --->   Operation 185 'trunc' 'trunc_ln137' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 186 [1/1] (0.00ns)   --->   "%trunc_ln137_1 = trunc i32 %col to i16" [conv/conv.cpp:137]   --->   Operation 186 'trunc' 'trunc_ln137_1' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 187 [1/1] (0.00ns)   --->   "%bias_buff_31_V_load = load i16* %bias_buff_31_V" [conv/conv.cpp:138]   --->   Operation 187 'load' 'bias_buff_31_V_load' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 188 [1/1] (0.00ns)   --->   "%bias_buff_31_V_1_lo = load i16* %bias_buff_31_V_1" [conv/conv.cpp:138]   --->   Operation 188 'load' 'bias_buff_31_V_1_lo' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 189 [1/1] (0.00ns)   --->   "%bias_buff_31_V_2_lo = load i16* %bias_buff_31_V_2" [conv/conv.cpp:138]   --->   Operation 189 'load' 'bias_buff_31_V_2_lo' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 190 [1/1] (0.00ns)   --->   "%bias_buff_31_V_3_lo = load i16* %bias_buff_31_V_3" [conv/conv.cpp:138]   --->   Operation 190 'load' 'bias_buff_31_V_3_lo' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 191 [1/1] (0.00ns)   --->   "%bias_buff_31_V_4_lo = load i16* %bias_buff_31_V_4" [conv/conv.cpp:138]   --->   Operation 191 'load' 'bias_buff_31_V_4_lo' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 192 [1/1] (0.00ns)   --->   "%bias_buff_31_V_5_lo = load i16* %bias_buff_31_V_5" [conv/conv.cpp:138]   --->   Operation 192 'load' 'bias_buff_31_V_5_lo' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 193 [1/1] (0.00ns)   --->   "%bias_buff_31_V_6_lo = load i16* %bias_buff_31_V_6" [conv/conv.cpp:138]   --->   Operation 193 'load' 'bias_buff_31_V_6_lo' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 194 [1/1] (0.00ns)   --->   "%bias_buff_31_V_7_lo = load i16* %bias_buff_31_V_7" [conv/conv.cpp:138]   --->   Operation 194 'load' 'bias_buff_31_V_7_lo' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 195 [1/1] (0.00ns)   --->   "%bias_buff_31_V_8_lo = load i16* %bias_buff_31_V_8" [conv/conv.cpp:138]   --->   Operation 195 'load' 'bias_buff_31_V_8_lo' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 196 [1/1] (0.00ns)   --->   "%bias_buff_31_V_9_lo = load i16* %bias_buff_31_V_9" [conv/conv.cpp:138]   --->   Operation 196 'load' 'bias_buff_31_V_9_lo' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 197 [1/1] (0.00ns)   --->   "%bias_buff_31_V_10_l = load i16* %bias_buff_31_V_10" [conv/conv.cpp:138]   --->   Operation 197 'load' 'bias_buff_31_V_10_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 198 [1/1] (0.00ns)   --->   "%bias_buff_31_V_11_l = load i16* %bias_buff_31_V_11" [conv/conv.cpp:138]   --->   Operation 198 'load' 'bias_buff_31_V_11_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 199 [1/1] (0.00ns)   --->   "%bias_buff_31_V_12_l = load i16* %bias_buff_31_V_12" [conv/conv.cpp:138]   --->   Operation 199 'load' 'bias_buff_31_V_12_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 200 [1/1] (0.00ns)   --->   "%bias_buff_31_V_13_l = load i16* %bias_buff_31_V_13" [conv/conv.cpp:138]   --->   Operation 200 'load' 'bias_buff_31_V_13_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 201 [1/1] (0.00ns)   --->   "%bias_buff_31_V_14_l = load i16* %bias_buff_31_V_14" [conv/conv.cpp:138]   --->   Operation 201 'load' 'bias_buff_31_V_14_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 202 [1/1] (0.00ns)   --->   "%bias_buff_31_V_15_l = load i16* %bias_buff_31_V_15" [conv/conv.cpp:138]   --->   Operation 202 'load' 'bias_buff_31_V_15_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 203 [1/1] (0.00ns)   --->   "%bias_buff_31_V_16_l = load i16* %bias_buff_31_V_16" [conv/conv.cpp:138]   --->   Operation 203 'load' 'bias_buff_31_V_16_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 204 [1/1] (0.00ns)   --->   "%bias_buff_31_V_17_l = load i16* %bias_buff_31_V_17" [conv/conv.cpp:138]   --->   Operation 204 'load' 'bias_buff_31_V_17_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 205 [1/1] (0.00ns)   --->   "%bias_buff_31_V_18_l = load i16* %bias_buff_31_V_18" [conv/conv.cpp:138]   --->   Operation 205 'load' 'bias_buff_31_V_18_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 206 [1/1] (0.00ns)   --->   "%bias_buff_31_V_19_l = load i16* %bias_buff_31_V_19" [conv/conv.cpp:138]   --->   Operation 206 'load' 'bias_buff_31_V_19_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 207 [1/1] (0.00ns)   --->   "%bias_buff_31_V_20_l = load i16* %bias_buff_31_V_20" [conv/conv.cpp:138]   --->   Operation 207 'load' 'bias_buff_31_V_20_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 208 [1/1] (0.00ns)   --->   "%bias_buff_31_V_21_l = load i16* %bias_buff_31_V_21" [conv/conv.cpp:138]   --->   Operation 208 'load' 'bias_buff_31_V_21_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 209 [1/1] (0.00ns)   --->   "%bias_buff_31_V_22_l = load i16* %bias_buff_31_V_22" [conv/conv.cpp:138]   --->   Operation 209 'load' 'bias_buff_31_V_22_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 210 [1/1] (0.00ns)   --->   "%bias_buff_31_V_23_l = load i16* %bias_buff_31_V_23" [conv/conv.cpp:138]   --->   Operation 210 'load' 'bias_buff_31_V_23_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 211 [1/1] (0.00ns)   --->   "%bias_buff_31_V_24_l = load i16* %bias_buff_31_V_24" [conv/conv.cpp:138]   --->   Operation 211 'load' 'bias_buff_31_V_24_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 212 [1/1] (0.00ns)   --->   "%bias_buff_31_V_25_l = load i16* %bias_buff_31_V_25" [conv/conv.cpp:138]   --->   Operation 212 'load' 'bias_buff_31_V_25_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 213 [1/1] (0.00ns)   --->   "%bias_buff_31_V_26_l = load i16* %bias_buff_31_V_26" [conv/conv.cpp:138]   --->   Operation 213 'load' 'bias_buff_31_V_26_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 214 [1/1] (0.00ns)   --->   "%bias_buff_31_V_27_l = load i16* %bias_buff_31_V_27" [conv/conv.cpp:138]   --->   Operation 214 'load' 'bias_buff_31_V_27_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 215 [1/1] (0.00ns)   --->   "%bias_buff_31_V_28_l = load i16* %bias_buff_31_V_28" [conv/conv.cpp:138]   --->   Operation 215 'load' 'bias_buff_31_V_28_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 216 [1/1] (0.00ns)   --->   "%bias_buff_31_V_29_l = load i16* %bias_buff_31_V_29" [conv/conv.cpp:138]   --->   Operation 216 'load' 'bias_buff_31_V_29_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 217 [1/1] (0.00ns)   --->   "%bias_buff_31_V_30_l = load i16* %bias_buff_31_V_30" [conv/conv.cpp:138]   --->   Operation 217 'load' 'bias_buff_31_V_30_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 218 [1/1] (0.00ns)   --->   "%bias_buff_31_V_31_l = load i16* %bias_buff_31_V_31" [conv/conv.cpp:138]   --->   Operation 218 'load' 'bias_buff_31_V_31_l' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 219 [1/1] (0.00ns)   --->   "br i1 %pp_0, label %1, label %2" [conv/conv.cpp:133]   --->   Operation 219 'br' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 220 [2/2] (2.35ns)   --->   "call fastcc void @load_input(i16* %IN1, i31 %in1_V1, i16* %IN2, i31 %in2_V3, i16* %IN3, i31 %in3_V5, [3249 x i16]* nocapture %fm_in_buff1_0_V, [3249 x i16]* nocapture %fm_in_buff1_1_V, [3249 x i16]* nocapture %fm_in_buff1_2_V, i16 zeroext %trunc_ln137, i16 zeroext %trunc_ln137_1)" [conv/conv.cpp:145]   --->   Operation 220 'call' <Predicate = (!pp_0)> <Delay = 2.35> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_14 : Operation 221 [2/2] (1.08ns)   --->   "call fastcc void @compute_output(i16* %W, i31 %weight_V7, i64* %OUT_r, i29 %out_V1, [3249 x i16]* nocapture %fm_in_buff2_0_V, [3249 x i16]* nocapture %fm_in_buff2_1_V, [3249 x i16]* nocapture %fm_in_buff2_2_V, i16 %bias_buff_31_V_load, i16 %bias_buff_31_V_1_lo, i16 %bias_buff_31_V_2_lo, i16 %bias_buff_31_V_3_lo, i16 %bias_buff_31_V_4_lo, i16 %bias_buff_31_V_5_lo, i16 %bias_buff_31_V_6_lo, i16 %bias_buff_31_V_7_lo, i16 %bias_buff_31_V_8_lo, i16 %bias_buff_31_V_9_lo, i16 %bias_buff_31_V_10_l, i16 %bias_buff_31_V_11_l, i16 %bias_buff_31_V_12_l, i16 %bias_buff_31_V_13_l, i16 %bias_buff_31_V_14_l, i16 %bias_buff_31_V_15_l, i16 %bias_buff_31_V_16_l, i16 %bias_buff_31_V_17_l, i16 %bias_buff_31_V_18_l, i16 %bias_buff_31_V_19_l, i16 %bias_buff_31_V_20_l, i16 %bias_buff_31_V_21_l, i16 %bias_buff_31_V_22_l, i16 %bias_buff_31_V_23_l, i16 %bias_buff_31_V_24_l, i16 %bias_buff_31_V_25_l, i16 %bias_buff_31_V_26_l, i16 %bias_buff_31_V_27_l, i16 %bias_buff_31_V_28_l, i16 %bias_buff_31_V_29_l, i16 %bias_buff_31_V_30_l, i16 %bias_buff_31_V_31_l, i32 %row_assign, i32 %col_assign)" [conv/conv.cpp:146]   --->   Operation 221 'call' <Predicate = (!pp_0)> <Delay = 1.08> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_14 : Operation 222 [2/2] (2.35ns)   --->   "call fastcc void @load_input(i16* %IN1, i31 %in1_V1, i16* %IN2, i31 %in2_V3, i16* %IN3, i31 %in3_V5, [3249 x i16]* nocapture %fm_in_buff2_0_V, [3249 x i16]* nocapture %fm_in_buff2_1_V, [3249 x i16]* nocapture %fm_in_buff2_2_V, i16 zeroext %trunc_ln137, i16 zeroext %trunc_ln137_1)" [conv/conv.cpp:137]   --->   Operation 222 'call' <Predicate = (pp_0)> <Delay = 2.35> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_14 : Operation 223 [2/2] (1.08ns)   --->   "call fastcc void @compute_output(i16* %W, i31 %weight_V7, i64* %OUT_r, i29 %out_V1, [3249 x i16]* nocapture %fm_in_buff1_0_V, [3249 x i16]* nocapture %fm_in_buff1_1_V, [3249 x i16]* nocapture %fm_in_buff1_2_V, i16 %bias_buff_31_V_load, i16 %bias_buff_31_V_1_lo, i16 %bias_buff_31_V_2_lo, i16 %bias_buff_31_V_3_lo, i16 %bias_buff_31_V_4_lo, i16 %bias_buff_31_V_5_lo, i16 %bias_buff_31_V_6_lo, i16 %bias_buff_31_V_7_lo, i16 %bias_buff_31_V_8_lo, i16 %bias_buff_31_V_9_lo, i16 %bias_buff_31_V_10_l, i16 %bias_buff_31_V_11_l, i16 %bias_buff_31_V_12_l, i16 %bias_buff_31_V_13_l, i16 %bias_buff_31_V_14_l, i16 %bias_buff_31_V_15_l, i16 %bias_buff_31_V_16_l, i16 %bias_buff_31_V_17_l, i16 %bias_buff_31_V_18_l, i16 %bias_buff_31_V_19_l, i16 %bias_buff_31_V_20_l, i16 %bias_buff_31_V_21_l, i16 %bias_buff_31_V_22_l, i16 %bias_buff_31_V_23_l, i16 %bias_buff_31_V_24_l, i16 %bias_buff_31_V_25_l, i16 %bias_buff_31_V_26_l, i16 %bias_buff_31_V_27_l, i16 %bias_buff_31_V_28_l, i16 %bias_buff_31_V_29_l, i16 %bias_buff_31_V_30_l, i16 %bias_buff_31_V_31_l, i32 %row_assign, i32 %col_assign)" [conv/conv.cpp:138]   --->   Operation 223 'call' <Predicate = (pp_0)> <Delay = 1.08> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 13> <Delay = 0.46>
+ST_15 : Operation 224 [1/2] (0.00ns)   --->   "call fastcc void @load_input(i16* %IN1, i31 %in1_V1, i16* %IN2, i31 %in2_V3, i16* %IN3, i31 %in3_V5, [3249 x i16]* nocapture %fm_in_buff1_0_V, [3249 x i16]* nocapture %fm_in_buff1_1_V, [3249 x i16]* nocapture %fm_in_buff1_2_V, i16 zeroext %trunc_ln137, i16 zeroext %trunc_ln137_1)" [conv/conv.cpp:145]   --->   Operation 224 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_15 : Operation 225 [1/2] (0.00ns)   --->   "call fastcc void @compute_output(i16* %W, i31 %weight_V7, i64* %OUT_r, i29 %out_V1, [3249 x i16]* nocapture %fm_in_buff2_0_V, [3249 x i16]* nocapture %fm_in_buff2_1_V, [3249 x i16]* nocapture %fm_in_buff2_2_V, i16 %bias_buff_31_V_load, i16 %bias_buff_31_V_1_lo, i16 %bias_buff_31_V_2_lo, i16 %bias_buff_31_V_3_lo, i16 %bias_buff_31_V_4_lo, i16 %bias_buff_31_V_5_lo, i16 %bias_buff_31_V_6_lo, i16 %bias_buff_31_V_7_lo, i16 %bias_buff_31_V_8_lo, i16 %bias_buff_31_V_9_lo, i16 %bias_buff_31_V_10_l, i16 %bias_buff_31_V_11_l, i16 %bias_buff_31_V_12_l, i16 %bias_buff_31_V_13_l, i16 %bias_buff_31_V_14_l, i16 %bias_buff_31_V_15_l, i16 %bias_buff_31_V_16_l, i16 %bias_buff_31_V_17_l, i16 %bias_buff_31_V_18_l, i16 %bias_buff_31_V_19_l, i16 %bias_buff_31_V_20_l, i16 %bias_buff_31_V_21_l, i16 %bias_buff_31_V_22_l, i16 %bias_buff_31_V_23_l, i16 %bias_buff_31_V_24_l, i16 %bias_buff_31_V_25_l, i16 %bias_buff_31_V_26_l, i16 %bias_buff_31_V_27_l, i16 %bias_buff_31_V_28_l, i16 %bias_buff_31_V_29_l, i16 %bias_buff_31_V_30_l, i16 %bias_buff_31_V_31_l, i32 %row_assign, i32 %col_assign)" [conv/conv.cpp:146]   --->   Operation 225 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_15 : Operation 226 [1/1] (0.46ns)   --->   "br label %3"   --->   Operation 226 'br' <Predicate = true> <Delay = 0.46>
+
+State 16 <SV = 13> <Delay = 0.46>
+ST_16 : Operation 227 [1/2] (0.00ns)   --->   "call fastcc void @load_input(i16* %IN1, i31 %in1_V1, i16* %IN2, i31 %in2_V3, i16* %IN3, i31 %in3_V5, [3249 x i16]* nocapture %fm_in_buff2_0_V, [3249 x i16]* nocapture %fm_in_buff2_1_V, [3249 x i16]* nocapture %fm_in_buff2_2_V, i16 zeroext %trunc_ln137, i16 zeroext %trunc_ln137_1)" [conv/conv.cpp:137]   --->   Operation 227 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_16 : Operation 228 [1/2] (0.00ns)   --->   "call fastcc void @compute_output(i16* %W, i31 %weight_V7, i64* %OUT_r, i29 %out_V1, [3249 x i16]* nocapture %fm_in_buff1_0_V, [3249 x i16]* nocapture %fm_in_buff1_1_V, [3249 x i16]* nocapture %fm_in_buff1_2_V, i16 %bias_buff_31_V_load, i16 %bias_buff_31_V_1_lo, i16 %bias_buff_31_V_2_lo, i16 %bias_buff_31_V_3_lo, i16 %bias_buff_31_V_4_lo, i16 %bias_buff_31_V_5_lo, i16 %bias_buff_31_V_6_lo, i16 %bias_buff_31_V_7_lo, i16 %bias_buff_31_V_8_lo, i16 %bias_buff_31_V_9_lo, i16 %bias_buff_31_V_10_l, i16 %bias_buff_31_V_11_l, i16 %bias_buff_31_V_12_l, i16 %bias_buff_31_V_13_l, i16 %bias_buff_31_V_14_l, i16 %bias_buff_31_V_15_l, i16 %bias_buff_31_V_16_l, i16 %bias_buff_31_V_17_l, i16 %bias_buff_31_V_18_l, i16 %bias_buff_31_V_19_l, i16 %bias_buff_31_V_20_l, i16 %bias_buff_31_V_21_l, i16 %bias_buff_31_V_22_l, i16 %bias_buff_31_V_23_l, i16 %bias_buff_31_V_24_l, i16 %bias_buff_31_V_25_l, i16 %bias_buff_31_V_26_l, i16 %bias_buff_31_V_27_l, i16 %bias_buff_31_V_28_l, i16 %bias_buff_31_V_29_l, i16 %bias_buff_31_V_30_l, i16 %bias_buff_31_V_31_l, i32 %row_assign, i32 %col_assign)" [conv/conv.cpp:138]   --->   Operation 228 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_16 : Operation 229 [1/1] (0.46ns)   --->   "br label %3" [conv/conv.cpp:140]   --->   Operation 229 'br' <Predicate = true> <Delay = 0.46>
+
+State 17 <SV = 14> <Delay = 3.86>
+ST_17 : Operation 230 [1/1] (0.00ns)   --->   "%pp_1 = phi i1 [ false, %1 ], [ true, %2 ]"   --->   Operation 230 'phi' 'pp_1' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 231 [1/1] (1.89ns)   --->   "%add_ln151 = add nsw i32 %row, 28" [conv/conv.cpp:151]   --->   Operation 231 'add' 'add_ln151' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 232 [1/1] (1.96ns)   --->   "%icmp_ln151 = icmp sgt i32 %add_ln151, 111" [conv/conv.cpp:151]   --->   Operation 232 'icmp' 'icmp_ln151' <Predicate = true> <Delay = 1.96> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.96> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 233 [1/1] (0.00ns)   --->   "br i1 %icmp_ln151, label %4, label %._crit_edge" [conv/conv.cpp:151]   --->   Operation 233 'br' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 234 [1/1] (1.89ns)   --->   "%add_ln151_1 = add nsw i32 %col, 28" [conv/conv.cpp:151]   --->   Operation 234 'add' 'add_ln151_1' <Predicate = (icmp_ln151)> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 235 [1/1] (1.96ns)   --->   "%icmp_ln151_1 = icmp sgt i32 %add_ln151_1, 111" [conv/conv.cpp:151]   --->   Operation 235 'icmp' 'icmp_ln151_1' <Predicate = (icmp_ln151)> <Delay = 1.96> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.96> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 236 [1/1] (0.00ns)   --->   "br i1 %icmp_ln151_1, label %5, label %._crit_edge" [conv/conv.cpp:151]   --->   Operation 236 'br' <Predicate = (icmp_ln151)> <Delay = 0.00>
+ST_17 : Operation 237 [1/1] (0.00ns)   --->   "br label %0" [conv/conv.cpp:153]   --->   Operation 237 'br' <Predicate = (!icmp_ln151_1) | (!icmp_ln151)> <Delay = 0.00>
+ST_17 : Operation 238 [1/1] (0.00ns)   --->   "%bias_buff_31_V_load_1 = load i16* %bias_buff_31_V" [conv/conv.cpp:156]   --->   Operation 238 'load' 'bias_buff_31_V_load_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 239 [1/1] (0.00ns)   --->   "%bias_buff_31_V_1_lo_1 = load i16* %bias_buff_31_V_1" [conv/conv.cpp:156]   --->   Operation 239 'load' 'bias_buff_31_V_1_lo_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 240 [1/1] (0.00ns)   --->   "%bias_buff_31_V_2_lo_1 = load i16* %bias_buff_31_V_2" [conv/conv.cpp:156]   --->   Operation 240 'load' 'bias_buff_31_V_2_lo_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 241 [1/1] (0.00ns)   --->   "%bias_buff_31_V_3_lo_1 = load i16* %bias_buff_31_V_3" [conv/conv.cpp:156]   --->   Operation 241 'load' 'bias_buff_31_V_3_lo_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 242 [1/1] (0.00ns)   --->   "%bias_buff_31_V_4_lo_1 = load i16* %bias_buff_31_V_4" [conv/conv.cpp:156]   --->   Operation 242 'load' 'bias_buff_31_V_4_lo_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 243 [1/1] (0.00ns)   --->   "%bias_buff_31_V_5_lo_1 = load i16* %bias_buff_31_V_5" [conv/conv.cpp:156]   --->   Operation 243 'load' 'bias_buff_31_V_5_lo_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 244 [1/1] (0.00ns)   --->   "%bias_buff_31_V_6_lo_1 = load i16* %bias_buff_31_V_6" [conv/conv.cpp:156]   --->   Operation 244 'load' 'bias_buff_31_V_6_lo_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 245 [1/1] (0.00ns)   --->   "%bias_buff_31_V_7_lo_1 = load i16* %bias_buff_31_V_7" [conv/conv.cpp:156]   --->   Operation 245 'load' 'bias_buff_31_V_7_lo_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 246 [1/1] (0.00ns)   --->   "%bias_buff_31_V_8_lo_1 = load i16* %bias_buff_31_V_8" [conv/conv.cpp:156]   --->   Operation 246 'load' 'bias_buff_31_V_8_lo_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 247 [1/1] (0.00ns)   --->   "%bias_buff_31_V_9_lo_1 = load i16* %bias_buff_31_V_9" [conv/conv.cpp:156]   --->   Operation 247 'load' 'bias_buff_31_V_9_lo_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 248 [1/1] (0.00ns)   --->   "%bias_buff_31_V_10_l_1 = load i16* %bias_buff_31_V_10" [conv/conv.cpp:156]   --->   Operation 248 'load' 'bias_buff_31_V_10_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 249 [1/1] (0.00ns)   --->   "%bias_buff_31_V_11_l_1 = load i16* %bias_buff_31_V_11" [conv/conv.cpp:156]   --->   Operation 249 'load' 'bias_buff_31_V_11_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 250 [1/1] (0.00ns)   --->   "%bias_buff_31_V_12_l_1 = load i16* %bias_buff_31_V_12" [conv/conv.cpp:156]   --->   Operation 250 'load' 'bias_buff_31_V_12_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 251 [1/1] (0.00ns)   --->   "%bias_buff_31_V_13_l_1 = load i16* %bias_buff_31_V_13" [conv/conv.cpp:156]   --->   Operation 251 'load' 'bias_buff_31_V_13_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 252 [1/1] (0.00ns)   --->   "%bias_buff_31_V_14_l_1 = load i16* %bias_buff_31_V_14" [conv/conv.cpp:156]   --->   Operation 252 'load' 'bias_buff_31_V_14_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 253 [1/1] (0.00ns)   --->   "%bias_buff_31_V_15_l_1 = load i16* %bias_buff_31_V_15" [conv/conv.cpp:156]   --->   Operation 253 'load' 'bias_buff_31_V_15_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 254 [1/1] (0.00ns)   --->   "%bias_buff_31_V_16_l_1 = load i16* %bias_buff_31_V_16" [conv/conv.cpp:156]   --->   Operation 254 'load' 'bias_buff_31_V_16_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 255 [1/1] (0.00ns)   --->   "%bias_buff_31_V_17_l_1 = load i16* %bias_buff_31_V_17" [conv/conv.cpp:156]   --->   Operation 255 'load' 'bias_buff_31_V_17_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 256 [1/1] (0.00ns)   --->   "%bias_buff_31_V_18_l_1 = load i16* %bias_buff_31_V_18" [conv/conv.cpp:156]   --->   Operation 256 'load' 'bias_buff_31_V_18_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 257 [1/1] (0.00ns)   --->   "%bias_buff_31_V_19_l_1 = load i16* %bias_buff_31_V_19" [conv/conv.cpp:156]   --->   Operation 257 'load' 'bias_buff_31_V_19_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 258 [1/1] (0.00ns)   --->   "%bias_buff_31_V_20_l_1 = load i16* %bias_buff_31_V_20" [conv/conv.cpp:156]   --->   Operation 258 'load' 'bias_buff_31_V_20_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 259 [1/1] (0.00ns)   --->   "%bias_buff_31_V_21_l_1 = load i16* %bias_buff_31_V_21" [conv/conv.cpp:156]   --->   Operation 259 'load' 'bias_buff_31_V_21_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 260 [1/1] (0.00ns)   --->   "%bias_buff_31_V_22_l_1 = load i16* %bias_buff_31_V_22" [conv/conv.cpp:156]   --->   Operation 260 'load' 'bias_buff_31_V_22_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 261 [1/1] (0.00ns)   --->   "%bias_buff_31_V_23_l_1 = load i16* %bias_buff_31_V_23" [conv/conv.cpp:156]   --->   Operation 261 'load' 'bias_buff_31_V_23_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 262 [1/1] (0.00ns)   --->   "%bias_buff_31_V_24_l_1 = load i16* %bias_buff_31_V_24" [conv/conv.cpp:156]   --->   Operation 262 'load' 'bias_buff_31_V_24_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 263 [1/1] (0.00ns)   --->   "%bias_buff_31_V_25_l_1 = load i16* %bias_buff_31_V_25" [conv/conv.cpp:156]   --->   Operation 263 'load' 'bias_buff_31_V_25_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 264 [1/1] (0.00ns)   --->   "%bias_buff_31_V_26_l_1 = load i16* %bias_buff_31_V_26" [conv/conv.cpp:156]   --->   Operation 264 'load' 'bias_buff_31_V_26_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 265 [1/1] (0.00ns)   --->   "%bias_buff_31_V_27_l_1 = load i16* %bias_buff_31_V_27" [conv/conv.cpp:156]   --->   Operation 265 'load' 'bias_buff_31_V_27_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 266 [1/1] (0.00ns)   --->   "%bias_buff_31_V_28_l_1 = load i16* %bias_buff_31_V_28" [conv/conv.cpp:156]   --->   Operation 266 'load' 'bias_buff_31_V_28_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 267 [1/1] (0.00ns)   --->   "%bias_buff_31_V_29_l_1 = load i16* %bias_buff_31_V_29" [conv/conv.cpp:156]   --->   Operation 267 'load' 'bias_buff_31_V_29_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 268 [1/1] (0.00ns)   --->   "%bias_buff_31_V_30_l_1 = load i16* %bias_buff_31_V_30" [conv/conv.cpp:156]   --->   Operation 268 'load' 'bias_buff_31_V_30_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 269 [1/1] (0.00ns)   --->   "%bias_buff_31_V_31_l_1 = load i16* %bias_buff_31_V_31" [conv/conv.cpp:156]   --->   Operation 269 'load' 'bias_buff_31_V_31_l_1' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 270 [1/1] (0.00ns)   --->   "br i1 %pp_1, label %6, label %7" [conv/conv.cpp:155]   --->   Operation 270 'br' <Predicate = (icmp_ln151 & icmp_ln151_1)> <Delay = 0.00>
+ST_17 : Operation 271 [2/2] (1.08ns)   --->   "call fastcc void @compute_output(i16* %W, i31 %weight_V7, i64* %OUT_r, i29 %out_V1, [3249 x i16]* nocapture %fm_in_buff2_0_V, [3249 x i16]* nocapture %fm_in_buff2_1_V, [3249 x i16]* nocapture %fm_in_buff2_2_V, i16 %bias_buff_31_V_load_1, i16 %bias_buff_31_V_1_lo_1, i16 %bias_buff_31_V_2_lo_1, i16 %bias_buff_31_V_3_lo_1, i16 %bias_buff_31_V_4_lo_1, i16 %bias_buff_31_V_5_lo_1, i16 %bias_buff_31_V_6_lo_1, i16 %bias_buff_31_V_7_lo_1, i16 %bias_buff_31_V_8_lo_1, i16 %bias_buff_31_V_9_lo_1, i16 %bias_buff_31_V_10_l_1, i16 %bias_buff_31_V_11_l_1, i16 %bias_buff_31_V_12_l_1, i16 %bias_buff_31_V_13_l_1, i16 %bias_buff_31_V_14_l_1, i16 %bias_buff_31_V_15_l_1, i16 %bias_buff_31_V_16_l_1, i16 %bias_buff_31_V_17_l_1, i16 %bias_buff_31_V_18_l_1, i16 %bias_buff_31_V_19_l_1, i16 %bias_buff_31_V_20_l_1, i16 %bias_buff_31_V_21_l_1, i16 %bias_buff_31_V_22_l_1, i16 %bias_buff_31_V_23_l_1, i16 %bias_buff_31_V_24_l_1, i16 %bias_buff_31_V_25_l_1, i16 %bias_buff_31_V_26_l_1, i16 %bias_buff_31_V_27_l_1, i16 %bias_buff_31_V_28_l_1, i16 %bias_buff_31_V_29_l_1, i16 %bias_buff_31_V_30_l_1, i16 %bias_buff_31_V_31_l_1, i32 %row, i32 %col)" [conv/conv.cpp:160]   --->   Operation 271 'call' <Predicate = (icmp_ln151 & icmp_ln151_1 & !pp_1)> <Delay = 1.08> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_17 : Operation 272 [2/2] (1.08ns)   --->   "call fastcc void @compute_output(i16* %W, i31 %weight_V7, i64* %OUT_r, i29 %out_V1, [3249 x i16]* nocapture %fm_in_buff1_0_V, [3249 x i16]* nocapture %fm_in_buff1_1_V, [3249 x i16]* nocapture %fm_in_buff1_2_V, i16 %bias_buff_31_V_load_1, i16 %bias_buff_31_V_1_lo_1, i16 %bias_buff_31_V_2_lo_1, i16 %bias_buff_31_V_3_lo_1, i16 %bias_buff_31_V_4_lo_1, i16 %bias_buff_31_V_5_lo_1, i16 %bias_buff_31_V_6_lo_1, i16 %bias_buff_31_V_7_lo_1, i16 %bias_buff_31_V_8_lo_1, i16 %bias_buff_31_V_9_lo_1, i16 %bias_buff_31_V_10_l_1, i16 %bias_buff_31_V_11_l_1, i16 %bias_buff_31_V_12_l_1, i16 %bias_buff_31_V_13_l_1, i16 %bias_buff_31_V_14_l_1, i16 %bias_buff_31_V_15_l_1, i16 %bias_buff_31_V_16_l_1, i16 %bias_buff_31_V_17_l_1, i16 %bias_buff_31_V_18_l_1, i16 %bias_buff_31_V_19_l_1, i16 %bias_buff_31_V_20_l_1, i16 %bias_buff_31_V_21_l_1, i16 %bias_buff_31_V_22_l_1, i16 %bias_buff_31_V_23_l_1, i16 %bias_buff_31_V_24_l_1, i16 %bias_buff_31_V_25_l_1, i16 %bias_buff_31_V_26_l_1, i16 %bias_buff_31_V_27_l_1, i16 %bias_buff_31_V_28_l_1, i16 %bias_buff_31_V_29_l_1, i16 %bias_buff_31_V_30_l_1, i16 %bias_buff_31_V_31_l_1, i32 %row, i32 %col)" [conv/conv.cpp:156]   --->   Operation 272 'call' <Predicate = (icmp_ln151 & icmp_ln151_1 & pp_1)> <Delay = 1.08> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 15> <Delay = 0.00>
+ST_18 : Operation 273 [1/2] (0.00ns)   --->   "call fastcc void @compute_output(i16* %W, i31 %weight_V7, i64* %OUT_r, i29 %out_V1, [3249 x i16]* nocapture %fm_in_buff2_0_V, [3249 x i16]* nocapture %fm_in_buff2_1_V, [3249 x i16]* nocapture %fm_in_buff2_2_V, i16 %bias_buff_31_V_load_1, i16 %bias_buff_31_V_1_lo_1, i16 %bias_buff_31_V_2_lo_1, i16 %bias_buff_31_V_3_lo_1, i16 %bias_buff_31_V_4_lo_1, i16 %bias_buff_31_V_5_lo_1, i16 %bias_buff_31_V_6_lo_1, i16 %bias_buff_31_V_7_lo_1, i16 %bias_buff_31_V_8_lo_1, i16 %bias_buff_31_V_9_lo_1, i16 %bias_buff_31_V_10_l_1, i16 %bias_buff_31_V_11_l_1, i16 %bias_buff_31_V_12_l_1, i16 %bias_buff_31_V_13_l_1, i16 %bias_buff_31_V_14_l_1, i16 %bias_buff_31_V_15_l_1, i16 %bias_buff_31_V_16_l_1, i16 %bias_buff_31_V_17_l_1, i16 %bias_buff_31_V_18_l_1, i16 %bias_buff_31_V_19_l_1, i16 %bias_buff_31_V_20_l_1, i16 %bias_buff_31_V_21_l_1, i16 %bias_buff_31_V_22_l_1, i16 %bias_buff_31_V_23_l_1, i16 %bias_buff_31_V_24_l_1, i16 %bias_buff_31_V_25_l_1, i16 %bias_buff_31_V_26_l_1, i16 %bias_buff_31_V_27_l_1, i16 %bias_buff_31_V_28_l_1, i16 %bias_buff_31_V_29_l_1, i16 %bias_buff_31_V_30_l_1, i16 %bias_buff_31_V_31_l_1, i32 %row, i32 %col)" [conv/conv.cpp:160]   --->   Operation 273 'call' <Predicate = (!pp_1)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_18 : Operation 274 [1/1] (0.00ns)   --->   "br label %8"   --->   Operation 274 'br' <Predicate = (!pp_1)> <Delay = 0.00>
+ST_18 : Operation 275 [1/2] (0.00ns)   --->   "call fastcc void @compute_output(i16* %W, i31 %weight_V7, i64* %OUT_r, i29 %out_V1, [3249 x i16]* nocapture %fm_in_buff1_0_V, [3249 x i16]* nocapture %fm_in_buff1_1_V, [3249 x i16]* nocapture %fm_in_buff1_2_V, i16 %bias_buff_31_V_load_1, i16 %bias_buff_31_V_1_lo_1, i16 %bias_buff_31_V_2_lo_1, i16 %bias_buff_31_V_3_lo_1, i16 %bias_buff_31_V_4_lo_1, i16 %bias_buff_31_V_5_lo_1, i16 %bias_buff_31_V_6_lo_1, i16 %bias_buff_31_V_7_lo_1, i16 %bias_buff_31_V_8_lo_1, i16 %bias_buff_31_V_9_lo_1, i16 %bias_buff_31_V_10_l_1, i16 %bias_buff_31_V_11_l_1, i16 %bias_buff_31_V_12_l_1, i16 %bias_buff_31_V_13_l_1, i16 %bias_buff_31_V_14_l_1, i16 %bias_buff_31_V_15_l_1, i16 %bias_buff_31_V_16_l_1, i16 %bias_buff_31_V_17_l_1, i16 %bias_buff_31_V_18_l_1, i16 %bias_buff_31_V_19_l_1, i16 %bias_buff_31_V_20_l_1, i16 %bias_buff_31_V_21_l_1, i16 %bias_buff_31_V_22_l_1, i16 %bias_buff_31_V_23_l_1, i16 %bias_buff_31_V_24_l_1, i16 %bias_buff_31_V_25_l_1, i16 %bias_buff_31_V_26_l_1, i16 %bias_buff_31_V_27_l_1, i16 %bias_buff_31_V_28_l_1, i16 %bias_buff_31_V_29_l_1, i16 %bias_buff_31_V_30_l_1, i16 %bias_buff_31_V_31_l_1, i32 %row, i32 %col)" [conv/conv.cpp:156]   --->   Operation 275 'call' <Predicate = (pp_1)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_18 : Operation 276 [1/1] (0.00ns)   --->   "br label %8" [conv/conv.cpp:158]   --->   Operation 276 'br' <Predicate = (pp_1)> <Delay = 0.00>
+ST_18 : Operation 277 [1/1] (0.00ns)   --->   "ret void" [conv/conv.cpp:170]   --->   Operation 277 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 0.625ns.
+
+ <State 1>: 1ns
+The critical path consists of the following:
+	s_axi read on port 'out_V' [44]  (1 ns)
+
+ <State 2>: 4.38ns
+The critical path consists of the following:
+	bus request on port 'W' (conv/conv.cpp:123) [82]  (4.38 ns)
+
+ <State 3>: 4.38ns
+The critical path consists of the following:
+	bus request on port 'W' (conv/conv.cpp:123) [82]  (4.38 ns)
+
+ <State 4>: 4.38ns
+The critical path consists of the following:
+	bus request on port 'W' (conv/conv.cpp:123) [82]  (4.38 ns)
+
+ <State 5>: 4.38ns
+The critical path consists of the following:
+	bus request on port 'W' (conv/conv.cpp:123) [82]  (4.38 ns)
+
+ <State 6>: 4.38ns
+The critical path consists of the following:
+	bus request on port 'W' (conv/conv.cpp:123) [82]  (4.38 ns)
+
+ <State 7>: 4.38ns
+The critical path consists of the following:
+	bus request on port 'W' (conv/conv.cpp:123) [82]  (4.38 ns)
+
+ <State 8>: 4.38ns
+The critical path consists of the following:
+	bus request on port 'W' (conv/conv.cpp:123) [82]  (4.38 ns)
+
+ <State 9>: 1.28ns
+The critical path consists of the following:
+	'phi' operation ('phi_ln123', conv/conv.cpp:123) with incoming values : ('add_ln123', conv/conv.cpp:123) [85]  (0 ns)
+	'add' operation ('add_ln123', conv/conv.cpp:123) [88]  (1.28 ns)
+
+ <State 10>: 4.38ns
+The critical path consists of the following:
+	bus read on port 'W' (conv/conv.cpp:123) [94]  (4.38 ns)
+	'store' operation ('store_ln123', conv/conv.cpp:123) of variable 'bias_buff[0].V', conv/conv.cpp:123 on local variable 'bias_buff[31].V' [185]  (0 ns)
+
+ <State 11>: 2.36ns
+The critical path consists of the following:
+	'call' operation ('call_ln130', conv/conv.cpp:130) to 'load_input' [197]  (2.36 ns)
+
+ <State 12>: 0.466ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('pp_0') [200]  (0.466 ns)
+
+ <State 13>: 3.86ns
+The critical path consists of the following:
+	'phi' operation ('col') with incoming values : ('next_col', conv/conv.cpp:93->conv/conv.cpp:132) [202]  (0 ns)
+	'add' operation ('add_ln93', conv/conv.cpp:93->conv/conv.cpp:132) [203]  (1.9 ns)
+	'icmp' operation ('icmp_ln93', conv/conv.cpp:93->conv/conv.cpp:132) [204]  (1.97 ns)
+
+ <State 14>: 3.06ns
+The critical path consists of the following:
+	'select' operation ('row', conv/conv.cpp:93->conv/conv.cpp:132) [206]  (0.705 ns)
+	'call' operation ('call_ln145', conv/conv.cpp:145) to 'load_input' [244]  (2.36 ns)
+
+ <State 15>: 0.466ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('pp_1') [252]  (0.466 ns)
+
+ <State 16>: 0.466ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('pp_1') [252]  (0.466 ns)
+
+ <State 17>: 3.86ns
+The critical path consists of the following:
+	'add' operation ('add_ln151', conv/conv.cpp:151) [253]  (1.9 ns)
+	'icmp' operation ('icmp_ln151', conv/conv.cpp:151) [254]  (1.97 ns)
+
+ <State 18>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

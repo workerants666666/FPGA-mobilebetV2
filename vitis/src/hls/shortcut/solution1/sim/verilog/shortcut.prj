@@ -1,0 +1,12 @@
+sv work "glbl.v"
+sv xil_defaultlib "AESL_axi_master_IN1.v"
+sv xil_defaultlib "AESL_axi_master_IN2.v"
+sv xil_defaultlib "AESL_axi_master_OUT_r.v"
+sv xil_defaultlib "AESL_axi_slave_CTRL.v"
+sv xil_defaultlib "shortcut.autotb.v"
+sv xil_defaultlib "shortcut.v"
+sv xil_defaultlib "shortcut_CTRL_s_axi.v"
+sv xil_defaultlib "shortcut_IN1_m_axi.v"
+sv xil_defaultlib "shortcut_IN2_m_axi.v"
+sv xil_defaultlib "shortcut_OUT_r_m_axi.v"
+

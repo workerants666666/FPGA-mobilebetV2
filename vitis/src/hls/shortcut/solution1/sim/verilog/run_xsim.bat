@@ -1,0 +1,5 @@
+
+set PATH=
+call F:/Xilinx19.2/Vivado/2019.2/bin/xelab xil_defaultlib.apatb_shortcut_top glbl -prj shortcut.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm --initfile "F:/Xilinx19.2/Vivado/2019.2/data/xsim/ip/xsim_ip.ini" --lib "ieee_proposed=./ieee_proposed" -s shortcut -debug wave
+call F:/Xilinx19.2/Vivado/2019.2/bin/xsim --noieeewarnings shortcut -tclbatch shortcut.tcl
+

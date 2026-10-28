@@ -1,0 +1,5 @@
+shortcut_CTRL_s_axi
+shortcut_IN1_m_axi
+shortcut_IN2_m_axi
+shortcut_OUT_r_m_axi
+shortcut

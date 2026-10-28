@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]C:\Users\Lenovo\Desktop\FPGA\vitis_2025_2\workspace\trash_platform\export\trash_platform\sw\boot\fsbl.elf
+	C:\Users\Lenovo\Desktop\FPGA\vitis_2025_2\workspace\trash_app\_ide\bitstream\design_1_wrapper_3.3v_final.bit
+	C:\Users\Lenovo\Desktop\FPGA\vitis_2025_2\workspace\trash_app\build\trash_app.elf
+}

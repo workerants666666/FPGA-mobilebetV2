@@ -1,0 +1,2236 @@
+
+
+================================================================
+== Vivado HLS Report for 'compute_output'
+================================================================
+* Date:           Wed Mar  9 13:32:55 2022
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        conv
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns | 4.539 ns |   0.62 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-------+-------+---------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
+    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
+    +---------+---------+----------+----------+-------+-------+---------+
+    |    29241|    29241| 0.146 ms | 0.146 ms |  29241|  29241|   none  |
+    +---------+---------+----------+----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------+------------------+---------+---------+-----------+-----------+------+------+----------+
+        |                             |                  |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline |
+        |           Instance          |      Module      |   min   |   max   |    min    |    max    |  min |  max |   Type   |
+        +-----------------------------+------------------+---------+---------+-----------+-----------+------+------+----------+
+        |grp_dataflow_in_loop_fu_354  |dataflow_in_loop  |     7308|     7308| 36.540 us | 36.540 us |  7074|  7074| dataflow |
+        +-----------------------------+------------------+---------+---------+-----------+-----------+------+------+----------+
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    29240|    29240|      7310|          -|          -|     4|    no    |
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.46>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%col_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %col)"   --->   Operation 4 'read' 'col_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%row_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %row)"   --->   Operation 5 'read' 'row_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%bias_buff_31_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_31_V_read)"   --->   Operation 6 'read' 'bias_buff_31_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%bias_buff_30_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_30_V_read)"   --->   Operation 7 'read' 'bias_buff_30_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%bias_buff_29_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_29_V_read)"   --->   Operation 8 'read' 'bias_buff_29_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%bias_buff_28_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_28_V_read)"   --->   Operation 9 'read' 'bias_buff_28_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%bias_buff_27_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_27_V_read)"   --->   Operation 10 'read' 'bias_buff_27_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%bias_buff_26_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_26_V_read)"   --->   Operation 11 'read' 'bias_buff_26_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%bias_buff_25_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_25_V_read)"   --->   Operation 12 'read' 'bias_buff_25_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%bias_buff_24_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_24_V_read)"   --->   Operation 13 'read' 'bias_buff_24_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%bias_buff_23_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_23_V_read)"   --->   Operation 14 'read' 'bias_buff_23_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%bias_buff_22_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_22_V_read)"   --->   Operation 15 'read' 'bias_buff_22_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%bias_buff_21_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_21_V_read)"   --->   Operation 16 'read' 'bias_buff_21_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%bias_buff_20_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_20_V_read)"   --->   Operation 17 'read' 'bias_buff_20_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%bias_buff_19_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_19_V_read)"   --->   Operation 18 'read' 'bias_buff_19_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%bias_buff_18_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_18_V_read)"   --->   Operation 19 'read' 'bias_buff_18_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%bias_buff_17_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_17_V_read)"   --->   Operation 20 'read' 'bias_buff_17_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%bias_buff_16_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_16_V_read)"   --->   Operation 21 'read' 'bias_buff_16_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%bias_buff_15_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_15_V_read)"   --->   Operation 22 'read' 'bias_buff_15_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%bias_buff_14_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_14_V_read)"   --->   Operation 23 'read' 'bias_buff_14_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%bias_buff_13_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_13_V_read)"   --->   Operation 24 'read' 'bias_buff_13_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%bias_buff_12_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_12_V_read)"   --->   Operation 25 'read' 'bias_buff_12_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%bias_buff_11_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_11_V_read)"   --->   Operation 26 'read' 'bias_buff_11_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%bias_buff_10_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_10_V_read)"   --->   Operation 27 'read' 'bias_buff_10_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%bias_buff_9_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_9_V_read)"   --->   Operation 28 'read' 'bias_buff_9_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%bias_buff_8_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_8_V_read)"   --->   Operation 29 'read' 'bias_buff_8_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%bias_buff_7_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_7_V_read)"   --->   Operation 30 'read' 'bias_buff_7_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%bias_buff_6_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_6_V_read)"   --->   Operation 31 'read' 'bias_buff_6_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%bias_buff_5_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_5_V_read)"   --->   Operation 32 'read' 'bias_buff_5_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%bias_buff_4_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_4_V_read)"   --->   Operation 33 'read' 'bias_buff_4_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%bias_buff_3_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_3_V_read)"   --->   Operation 34 'read' 'bias_buff_3_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%bias_buff_2_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_2_V_read)"   --->   Operation 35 'read' 'bias_buff_2_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%bias_buff_1_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_1_V_read)"   --->   Operation 36 'read' 'bias_buff_1_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%bias_buff_0_V_read_1 = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %bias_buff_0_V_read)"   --->   Operation 37 'read' 'bias_buff_0_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%out_V_offset_read = call i29 @_ssdm_op_Read.ap_auto.i29(i29 %out_V_offset)"   --->   Operation 38 'read' 'out_V_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%weight_V_offset_read = call i31 @_ssdm_op_Read.ap_auto.i31(i31 %weight_V_offset)"   --->   Operation 39 'read' 'weight_V_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %weight_V, [6 x i8]* @p_str9, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 864, [2 x i8]* @p_str12, [6 x i8]* @p_str11, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 40 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %out_V, [6 x i8]* @p_str9, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 100352, [4 x i8]* @p_str10, [6 x i8]* @p_str11, [1 x i8]* @p_str1, i32 16, i32 16, i32 32, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 41 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.46ns)   --->   "br label %0"   --->   Operation 42 'br' <Predicate = true> <Delay = 0.46>
+
+State 2 <SV = 1> <Delay = 2.73>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%ch_0_i = phi i6 [ 0, %codeRepl ], [ %ch, %1 ]"   --->   Operation 43 'phi' 'ch_0_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%tmp = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %ch_0_i, i32 5)" [conv/conv.cpp:84]   --->   Operation 44 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"   --->   Operation 45 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "br i1 %tmp, label %compute_output_.exit, label %1" [conv/conv.cpp:84]   --->   Operation 46 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 47 [2/2] (2.73ns)   --->   "call fastcc void @dataflow_in_loop(i16* %weight_V, i31 %weight_V_offset_read, i6 %ch_0_i, [3249 x i16]* nocapture %fm_in_buff_0_V, [3249 x i16]* nocapture %fm_in_buff_1_V, [3249 x i16]* nocapture %fm_in_buff_2_V, i16 %bias_buff_0_V_read_1, i16 %bias_buff_1_V_read_1, i16 %bias_buff_2_V_read_1, i16 %bias_buff_3_V_read_1, i16 %bias_buff_4_V_read_1, i16 %bias_buff_5_V_read_1, i16 %bias_buff_6_V_read_1, i16 %bias_buff_7_V_read_1, i16 %bias_buff_8_V_read_1, i16 %bias_buff_9_V_read_1, i16 %bias_buff_10_V_read_1, i16 %bias_buff_11_V_read_1, i16 %bias_buff_12_V_read_1, i16 %bias_buff_13_V_read_1, i16 %bias_buff_14_V_read_1, i16 %bias_buff_15_V_read_1, i16 %bias_buff_16_V_read_1, i16 %bias_buff_17_V_read_1, i16 %bias_buff_18_V_read_1, i16 %bias_buff_19_V_read_1, i16 %bias_buff_20_V_read_1, i16 %bias_buff_21_V_read_1, i16 %bias_buff_22_V_read_1, i16 %bias_buff_23_V_read_1, i16 %bias_buff_24_V_read_1, i16 %bias_buff_25_V_read_1, i16 %bias_buff_26_V_read_1, i16 %bias_buff_27_V_read_1, i16 %bias_buff_28_V_read_1, i16 %bias_buff_29_V_read_1, i16 %bias_buff_30_V_read_1, i16 %bias_buff_31_V_read_1, i64* %out_V, i29 %out_V_offset_read, i32 %row_read, i32 %col_read)" [conv/conv.cpp:88]   --->   Operation 47 'call' <Predicate = (!tmp)> <Delay = 2.73> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 48 [1/1] (1.28ns)   --->   "%ch = add i6 %ch_0_i, 8" [conv/conv.cpp:84]   --->   Operation 48 'add' 'ch' <Predicate = (!tmp)> <Delay = 1.28> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 49 [1/1] (0.00ns)   --->   "ret void" [conv/conv.cpp:90]   --->   Operation 49 'ret' <Predicate = (tmp)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 50 [1/2] (0.00ns)   --->   "call fastcc void @dataflow_in_loop(i16* %weight_V, i31 %weight_V_offset_read, i6 %ch_0_i, [3249 x i16]* nocapture %fm_in_buff_0_V, [3249 x i16]* nocapture %fm_in_buff_1_V, [3249 x i16]* nocapture %fm_in_buff_2_V, i16 %bias_buff_0_V_read_1, i16 %bias_buff_1_V_read_1, i16 %bias_buff_2_V_read_1, i16 %bias_buff_3_V_read_1, i16 %bias_buff_4_V_read_1, i16 %bias_buff_5_V_read_1, i16 %bias_buff_6_V_read_1, i16 %bias_buff_7_V_read_1, i16 %bias_buff_8_V_read_1, i16 %bias_buff_9_V_read_1, i16 %bias_buff_10_V_read_1, i16 %bias_buff_11_V_read_1, i16 %bias_buff_12_V_read_1, i16 %bias_buff_13_V_read_1, i16 %bias_buff_14_V_read_1, i16 %bias_buff_15_V_read_1, i16 %bias_buff_16_V_read_1, i16 %bias_buff_17_V_read_1, i16 %bias_buff_18_V_read_1, i16 %bias_buff_19_V_read_1, i16 %bias_buff_20_V_read_1, i16 %bias_buff_21_V_read_1, i16 %bias_buff_22_V_read_1, i16 %bias_buff_23_V_read_1, i16 %bias_buff_24_V_read_1, i16 %bias_buff_25_V_read_1, i16 %bias_buff_26_V_read_1, i16 %bias_buff_27_V_read_1, i16 %bias_buff_28_V_read_1, i16 %bias_buff_29_V_read_1, i16 %bias_buff_30_V_read_1, i16 %bias_buff_31_V_read_1, i64* %out_V, i29 %out_V_offset_read, i32 %row_read, i32 %col_read)" [conv/conv.cpp:88]   --->   Operation 50 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "br label %0" [conv/conv.cpp:84]   --->   Operation 51 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ weight_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=4; pingpong=0; private_global=0; IO mode=m_axi:ce=0
+Port [ weight_V_offset]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ out_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=4; pingpong=0; private_global=0; IO mode=m_axi:ce=0
+Port [ out_V_offset]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ fm_in_buff_0_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ fm_in_buff_1_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ fm_in_buff_2_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ bias_buff_0_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_1_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_2_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_3_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_4_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_5_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_6_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_7_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_8_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_9_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_10_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_11_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_12_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_13_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_14_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_15_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_16_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_17_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_18_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_19_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_20_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_21_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_22_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_23_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_24_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_25_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_26_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_27_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_28_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_29_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_30_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bias_buff_31_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ row]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ col]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+col_read              (read             ) [ 0011]
+row_read              (read             ) [ 0011]
+bias_buff_31_V_read_1 (read             ) [ 0011]
+bias_buff_30_V_read_1 (read             ) [ 0011]
+bias_buff_29_V_read_1 (read             ) [ 0011]
+bias_buff_28_V_read_1 (read             ) [ 0011]
+bias_buff_27_V_read_1 (read             ) [ 0011]
+bias_buff_26_V_read_1 (read             ) [ 0011]
+bias_buff_25_V_read_1 (read             ) [ 0011]
+bias_buff_24_V_read_1 (read             ) [ 0011]
+bias_buff_23_V_read_1 (read             ) [ 0011]
+bias_buff_22_V_read_1 (read             ) [ 0011]
+bias_buff_21_V_read_1 (read             ) [ 0011]
+bias_buff_20_V_read_1 (read             ) [ 0011]
+bias_buff_19_V_read_1 (read             ) [ 0011]
+bias_buff_18_V_read_1 (read             ) [ 0011]
+bias_buff_17_V_read_1 (read             ) [ 0011]
+bias_buff_16_V_read_1 (read             ) [ 0011]
+bias_buff_15_V_read_1 (read             ) [ 0011]
+bias_buff_14_V_read_1 (read             ) [ 0011]
+bias_buff_13_V_read_1 (read             ) [ 0011]
+bias_buff_12_V_read_1 (read             ) [ 0011]
+bias_buff_11_V_read_1 (read             ) [ 0011]
+bias_buff_10_V_read_1 (read             ) [ 0011]
+bias_buff_9_V_read_1  (read             ) [ 0011]
+bias_buff_8_V_read_1  (read             ) [ 0011]
+bias_buff_7_V_read_1  (read             ) [ 0011]
+bias_buff_6_V_read_1  (read             ) [ 0011]
+bias_buff_5_V_read_1  (read             ) [ 0011]
+bias_buff_4_V_read_1  (read             ) [ 0011]
+bias_buff_3_V_read_1  (read             ) [ 0011]
+bias_buff_2_V_read_1  (read             ) [ 0011]
+bias_buff_1_V_read_1  (read             ) [ 0011]
+bias_buff_0_V_read_1  (read             ) [ 0011]
+out_V_offset_read     (read             ) [ 0011]
+weight_V_offset_read  (read             ) [ 0011]
+specinterface_ln0     (specinterface    ) [ 0000]
+specinterface_ln0     (specinterface    ) [ 0000]
+br_ln0                (br               ) [ 0111]
+ch_0_i                (phi              ) [ 0011]
+tmp                   (bitselect        ) [ 0011]
+empty                 (speclooptripcount) [ 0000]
+br_ln84               (br               ) [ 0000]
+ch                    (add              ) [ 0111]
+ret_ln90              (ret              ) [ 0000]
+call_ln88             (call             ) [ 0000]
+br_ln84               (br               ) [ 0111]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="weight_V">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="weight_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="weight_V_offset">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="weight_V_offset"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="out_V">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="out_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="out_V_offset">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="out_V_offset"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="fm_in_buff_0_V">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="fm_in_buff_0_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="fm_in_buff_1_V">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="fm_in_buff_1_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1000" name="fm_in_buff_2_V">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="fm_in_buff_2_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1000" name="bias_buff_0_V_read">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_0_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1000" name="bias_buff_1_V_read">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_1_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1000" name="bias_buff_2_V_read">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_2_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1000" name="bias_buff_3_V_read">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_3_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1000" name="bias_buff_4_V_read">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_4_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1000" name="bias_buff_5_V_read">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_5_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1000" name="bias_buff_6_V_read">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_6_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1000" name="bias_buff_7_V_read">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_7_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1000" name="bias_buff_8_V_read">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_8_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1000" name="bias_buff_9_V_read">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_9_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1000" name="bias_buff_10_V_read">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_10_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1000" name="bias_buff_11_V_read">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_11_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1000" name="bias_buff_12_V_read">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_12_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1000" name="bias_buff_13_V_read">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_13_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1000" name="bias_buff_14_V_read">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_14_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1000" name="bias_buff_15_V_read">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_15_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1000" name="bias_buff_16_V_read">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_16_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1000" name="bias_buff_17_V_read">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_17_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1000" name="bias_buff_18_V_read">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_18_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1000" name="bias_buff_19_V_read">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_19_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1000" name="bias_buff_20_V_read">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_20_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1000" name="bias_buff_21_V_read">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_21_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1000" name="bias_buff_22_V_read">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_22_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1000" name="bias_buff_23_V_read">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_23_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1000" name="bias_buff_24_V_read">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_24_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1000" name="bias_buff_25_V_read">
+<pin_list>
+<pin id="65" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_25_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="66" class="1000" name="bias_buff_26_V_read">
+<pin_list>
+<pin id="67" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_26_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="68" class="1000" name="bias_buff_27_V_read">
+<pin_list>
+<pin id="69" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_27_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="70" class="1000" name="bias_buff_28_V_read">
+<pin_list>
+<pin id="71" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_28_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="72" class="1000" name="bias_buff_29_V_read">
+<pin_list>
+<pin id="73" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_29_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="74" class="1000" name="bias_buff_30_V_read">
+<pin_list>
+<pin id="75" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_30_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="76" class="1000" name="bias_buff_31_V_read">
+<pin_list>
+<pin id="77" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="bias_buff_31_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="78" class="1000" name="row">
+<pin_list>
+<pin id="79" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="row"/></StgValue>
+</bind>
+</comp>
+
+<comp id="80" class="1000" name="col">
+<pin_list>
+<pin id="81" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="col"/></StgValue>
+</bind>
+</comp>
+
+<comp id="82" class="1001" name="const_82">
+<pin_list>
+<pin id="83" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="84" class="1001" name="const_84">
+<pin_list>
+<pin id="85" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i16"/></StgValue>
+</bind>
+</comp>
+
+<comp id="86" class="1001" name="const_86">
+<pin_list>
+<pin id="87" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i29"/></StgValue>
+</bind>
+</comp>
+
+<comp id="88" class="1001" name="const_88">
+<pin_list>
+<pin id="89" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i31"/></StgValue>
+</bind>
+</comp>
+
+<comp id="90" class="1001" name="const_90">
+<pin_list>
+<pin id="91" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="92" class="1001" name="const_92">
+<pin_list>
+<pin id="93" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str9"/></StgValue>
+</bind>
+</comp>
+
+<comp id="94" class="1001" name="const_94">
+<pin_list>
+<pin id="95" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="96" class="1001" name="const_96">
+<pin_list>
+<pin id="97" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="98" class="1001" name="const_98">
+<pin_list>
+<pin id="99" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="100" class="1001" name="const_100">
+<pin_list>
+<pin id="101" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str12"/></StgValue>
+</bind>
+</comp>
+
+<comp id="102" class="1001" name="const_102">
+<pin_list>
+<pin id="103" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str11"/></StgValue>
+</bind>
+</comp>
+
+<comp id="104" class="1001" name="const_104">
+<pin_list>
+<pin id="105" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="106" class="1001" name="const_106">
+<pin_list>
+<pin id="107" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="108" class="1001" name="const_108">
+<pin_list>
+<pin id="109" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str10"/></StgValue>
+</bind>
+</comp>
+
+<comp id="110" class="1001" name="const_110">
+<pin_list>
+<pin id="111" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="112" class="1001" name="const_112">
+<pin_list>
+<pin id="113" dir="1" index="0" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="114" class="1001" name="const_114">
+<pin_list>
+<pin id="115" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitSelect.i1.i6.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="116" class="1001" name="const_116">
+<pin_list>
+<pin id="117" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="118" class="1001" name="const_118">
+<pin_list>
+<pin id="119" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecLoopTripCount"/></StgValue>
+</bind>
+</comp>
+
+<comp id="120" class="1001" name="const_120">
+<pin_list>
+<pin id="121" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="122" class="1001" name="const_122">
+<pin_list>
+<pin id="123" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="dataflow_in_loop"/></StgValue>
+</bind>
+</comp>
+
+<comp id="124" class="1001" name="const_124">
+<pin_list>
+<pin id="125" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="126" class="1004" name="col_read_read_fu_126">
+<pin_list>
+<pin id="127" dir="0" index="0" bw="32" slack="0"/>
+<pin id="128" dir="0" index="1" bw="32" slack="0"/>
+<pin id="129" dir="1" index="2" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="col_read/1 "/>
+</bind>
+</comp>
+
+<comp id="132" class="1004" name="row_read_read_fu_132">
+<pin_list>
+<pin id="133" dir="0" index="0" bw="32" slack="0"/>
+<pin id="134" dir="0" index="1" bw="32" slack="0"/>
+<pin id="135" dir="1" index="2" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="row_read/1 "/>
+</bind>
+</comp>
+
+<comp id="138" class="1004" name="bias_buff_31_V_read_1_read_fu_138">
+<pin_list>
+<pin id="139" dir="0" index="0" bw="16" slack="0"/>
+<pin id="140" dir="0" index="1" bw="16" slack="0"/>
+<pin id="141" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_31_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="144" class="1004" name="bias_buff_30_V_read_1_read_fu_144">
+<pin_list>
+<pin id="145" dir="0" index="0" bw="16" slack="0"/>
+<pin id="146" dir="0" index="1" bw="16" slack="0"/>
+<pin id="147" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_30_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="150" class="1004" name="bias_buff_29_V_read_1_read_fu_150">
+<pin_list>
+<pin id="151" dir="0" index="0" bw="16" slack="0"/>
+<pin id="152" dir="0" index="1" bw="16" slack="0"/>
+<pin id="153" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_29_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="156" class="1004" name="bias_buff_28_V_read_1_read_fu_156">
+<pin_list>
+<pin id="157" dir="0" index="0" bw="16" slack="0"/>
+<pin id="158" dir="0" index="1" bw="16" slack="0"/>
+<pin id="159" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_28_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="162" class="1004" name="bias_buff_27_V_read_1_read_fu_162">
+<pin_list>
+<pin id="163" dir="0" index="0" bw="16" slack="0"/>
+<pin id="164" dir="0" index="1" bw="16" slack="0"/>
+<pin id="165" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_27_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="168" class="1004" name="bias_buff_26_V_read_1_read_fu_168">
+<pin_list>
+<pin id="169" dir="0" index="0" bw="16" slack="0"/>
+<pin id="170" dir="0" index="1" bw="16" slack="0"/>
+<pin id="171" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_26_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="174" class="1004" name="bias_buff_25_V_read_1_read_fu_174">
+<pin_list>
+<pin id="175" dir="0" index="0" bw="16" slack="0"/>
+<pin id="176" dir="0" index="1" bw="16" slack="0"/>
+<pin id="177" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_25_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="180" class="1004" name="bias_buff_24_V_read_1_read_fu_180">
+<pin_list>
+<pin id="181" dir="0" index="0" bw="16" slack="0"/>
+<pin id="182" dir="0" index="1" bw="16" slack="0"/>
+<pin id="183" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_24_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="186" class="1004" name="bias_buff_23_V_read_1_read_fu_186">
+<pin_list>
+<pin id="187" dir="0" index="0" bw="16" slack="0"/>
+<pin id="188" dir="0" index="1" bw="16" slack="0"/>
+<pin id="189" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_23_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="192" class="1004" name="bias_buff_22_V_read_1_read_fu_192">
+<pin_list>
+<pin id="193" dir="0" index="0" bw="16" slack="0"/>
+<pin id="194" dir="0" index="1" bw="16" slack="0"/>
+<pin id="195" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_22_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="198" class="1004" name="bias_buff_21_V_read_1_read_fu_198">
+<pin_list>
+<pin id="199" dir="0" index="0" bw="16" slack="0"/>
+<pin id="200" dir="0" index="1" bw="16" slack="0"/>
+<pin id="201" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_21_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="204" class="1004" name="bias_buff_20_V_read_1_read_fu_204">
+<pin_list>
+<pin id="205" dir="0" index="0" bw="16" slack="0"/>
+<pin id="206" dir="0" index="1" bw="16" slack="0"/>
+<pin id="207" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_20_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="210" class="1004" name="bias_buff_19_V_read_1_read_fu_210">
+<pin_list>
+<pin id="211" dir="0" index="0" bw="16" slack="0"/>
+<pin id="212" dir="0" index="1" bw="16" slack="0"/>
+<pin id="213" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_19_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="216" class="1004" name="bias_buff_18_V_read_1_read_fu_216">
+<pin_list>
+<pin id="217" dir="0" index="0" bw="16" slack="0"/>
+<pin id="218" dir="0" index="1" bw="16" slack="0"/>
+<pin id="219" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_18_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="222" class="1004" name="bias_buff_17_V_read_1_read_fu_222">
+<pin_list>
+<pin id="223" dir="0" index="0" bw="16" slack="0"/>
+<pin id="224" dir="0" index="1" bw="16" slack="0"/>
+<pin id="225" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_17_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="228" class="1004" name="bias_buff_16_V_read_1_read_fu_228">
+<pin_list>
+<pin id="229" dir="0" index="0" bw="16" slack="0"/>
+<pin id="230" dir="0" index="1" bw="16" slack="0"/>
+<pin id="231" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_16_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="234" class="1004" name="bias_buff_15_V_read_1_read_fu_234">
+<pin_list>
+<pin id="235" dir="0" index="0" bw="16" slack="0"/>
+<pin id="236" dir="0" index="1" bw="16" slack="0"/>
+<pin id="237" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_15_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="240" class="1004" name="bias_buff_14_V_read_1_read_fu_240">
+<pin_list>
+<pin id="241" dir="0" index="0" bw="16" slack="0"/>
+<pin id="242" dir="0" index="1" bw="16" slack="0"/>
+<pin id="243" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_14_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="246" class="1004" name="bias_buff_13_V_read_1_read_fu_246">
+<pin_list>
+<pin id="247" dir="0" index="0" bw="16" slack="0"/>
+<pin id="248" dir="0" index="1" bw="16" slack="0"/>
+<pin id="249" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_13_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="252" class="1004" name="bias_buff_12_V_read_1_read_fu_252">
+<pin_list>
+<pin id="253" dir="0" index="0" bw="16" slack="0"/>
+<pin id="254" dir="0" index="1" bw="16" slack="0"/>
+<pin id="255" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_12_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="258" class="1004" name="bias_buff_11_V_read_1_read_fu_258">
+<pin_list>
+<pin id="259" dir="0" index="0" bw="16" slack="0"/>
+<pin id="260" dir="0" index="1" bw="16" slack="0"/>
+<pin id="261" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_11_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="264" class="1004" name="bias_buff_10_V_read_1_read_fu_264">
+<pin_list>
+<pin id="265" dir="0" index="0" bw="16" slack="0"/>
+<pin id="266" dir="0" index="1" bw="16" slack="0"/>
+<pin id="267" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_10_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="270" class="1004" name="bias_buff_9_V_read_1_read_fu_270">
+<pin_list>
+<pin id="271" dir="0" index="0" bw="16" slack="0"/>
+<pin id="272" dir="0" index="1" bw="16" slack="0"/>
+<pin id="273" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_9_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="276" class="1004" name="bias_buff_8_V_read_1_read_fu_276">
+<pin_list>
+<pin id="277" dir="0" index="0" bw="16" slack="0"/>
+<pin id="278" dir="0" index="1" bw="16" slack="0"/>
+<pin id="279" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_8_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="282" class="1004" name="bias_buff_7_V_read_1_read_fu_282">
+<pin_list>
+<pin id="283" dir="0" index="0" bw="16" slack="0"/>
+<pin id="284" dir="0" index="1" bw="16" slack="0"/>
+<pin id="285" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_7_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="288" class="1004" name="bias_buff_6_V_read_1_read_fu_288">
+<pin_list>
+<pin id="289" dir="0" index="0" bw="16" slack="0"/>
+<pin id="290" dir="0" index="1" bw="16" slack="0"/>
+<pin id="291" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_6_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="294" class="1004" name="bias_buff_5_V_read_1_read_fu_294">
+<pin_list>
+<pin id="295" dir="0" index="0" bw="16" slack="0"/>
+<pin id="296" dir="0" index="1" bw="16" slack="0"/>
+<pin id="297" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_5_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="300" class="1004" name="bias_buff_4_V_read_1_read_fu_300">
+<pin_list>
+<pin id="301" dir="0" index="0" bw="16" slack="0"/>
+<pin id="302" dir="0" index="1" bw="16" slack="0"/>
+<pin id="303" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_4_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="306" class="1004" name="bias_buff_3_V_read_1_read_fu_306">
+<pin_list>
+<pin id="307" dir="0" index="0" bw="16" slack="0"/>
+<pin id="308" dir="0" index="1" bw="16" slack="0"/>
+<pin id="309" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_3_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="312" class="1004" name="bias_buff_2_V_read_1_read_fu_312">
+<pin_list>
+<pin id="313" dir="0" index="0" bw="16" slack="0"/>
+<pin id="314" dir="0" index="1" bw="16" slack="0"/>
+<pin id="315" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_2_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="318" class="1004" name="bias_buff_1_V_read_1_read_fu_318">
+<pin_list>
+<pin id="319" dir="0" index="0" bw="16" slack="0"/>
+<pin id="320" dir="0" index="1" bw="16" slack="0"/>
+<pin id="321" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_1_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="324" class="1004" name="bias_buff_0_V_read_1_read_fu_324">
+<pin_list>
+<pin id="325" dir="0" index="0" bw="16" slack="0"/>
+<pin id="326" dir="0" index="1" bw="16" slack="0"/>
+<pin id="327" dir="1" index="2" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="bias_buff_0_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="330" class="1004" name="out_V_offset_read_read_fu_330">
+<pin_list>
+<pin id="331" dir="0" index="0" bw="29" slack="0"/>
+<pin id="332" dir="0" index="1" bw="29" slack="0"/>
+<pin id="333" dir="1" index="2" bw="29" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="out_V_offset_read/1 "/>
+</bind>
+</comp>
+
+<comp id="336" class="1004" name="weight_V_offset_read_read_fu_336">
+<pin_list>
+<pin id="337" dir="0" index="0" bw="31" slack="0"/>
+<pin id="338" dir="0" index="1" bw="31" slack="0"/>
+<pin id="339" dir="1" index="2" bw="31" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="weight_V_offset_read/1 "/>
+</bind>
+</comp>
+
+<comp id="342" class="1005" name="ch_0_i_reg_342">
+<pin_list>
+<pin id="343" dir="0" index="0" bw="6" slack="1"/>
+<pin id="344" dir="1" index="1" bw="6" slack="1"/>
+</pin_list>
+<bind>
+<opset="ch_0_i (phireg) "/>
+</bind>
+</comp>
+
+<comp id="346" class="1004" name="ch_0_i_phi_fu_346">
+<pin_list>
+<pin id="347" dir="0" index="0" bw="1" slack="1"/>
+<pin id="348" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="349" dir="0" index="2" bw="6" slack="0"/>
+<pin id="350" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="351" dir="1" index="4" bw="6" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="ch_0_i/2 "/>
+</bind>
+</comp>
+
+<comp id="354" class="1004" name="grp_dataflow_in_loop_fu_354">
+<pin_list>
+<pin id="355" dir="0" index="0" bw="0" slack="0"/>
+<pin id="356" dir="0" index="1" bw="16" slack="0"/>
+<pin id="357" dir="0" index="2" bw="31" slack="1"/>
+<pin id="358" dir="0" index="3" bw="6" slack="0"/>
+<pin id="359" dir="0" index="4" bw="16" slack="0"/>
+<pin id="360" dir="0" index="5" bw="16" slack="0"/>
+<pin id="361" dir="0" index="6" bw="16" slack="0"/>
+<pin id="362" dir="0" index="7" bw="16" slack="1"/>
+<pin id="363" dir="0" index="8" bw="16" slack="1"/>
+<pin id="364" dir="0" index="9" bw="16" slack="1"/>
+<pin id="365" dir="0" index="10" bw="16" slack="1"/>
+<pin id="366" dir="0" index="11" bw="16" slack="1"/>
+<pin id="367" dir="0" index="12" bw="16" slack="1"/>
+<pin id="368" dir="0" index="13" bw="16" slack="1"/>
+<pin id="369" dir="0" index="14" bw="16" slack="1"/>
+<pin id="370" dir="0" index="15" bw="16" slack="1"/>
+<pin id="371" dir="0" index="16" bw="16" slack="1"/>
+<pin id="372" dir="0" index="17" bw="16" slack="1"/>
+<pin id="373" dir="0" index="18" bw="16" slack="1"/>
+<pin id="374" dir="0" index="19" bw="16" slack="1"/>
+<pin id="375" dir="0" index="20" bw="16" slack="1"/>
+<pin id="376" dir="0" index="21" bw="16" slack="1"/>
+<pin id="377" dir="0" index="22" bw="16" slack="1"/>
+<pin id="378" dir="0" index="23" bw="16" slack="1"/>
+<pin id="379" dir="0" index="24" bw="16" slack="1"/>
+<pin id="380" dir="0" index="25" bw="16" slack="1"/>
+<pin id="381" dir="0" index="26" bw="16" slack="1"/>
+<pin id="382" dir="0" index="27" bw="16" slack="1"/>
+<pin id="383" dir="0" index="28" bw="16" slack="1"/>
+<pin id="384" dir="0" index="29" bw="16" slack="1"/>
+<pin id="385" dir="0" index="30" bw="16" slack="1"/>
+<pin id="386" dir="0" index="31" bw="16" slack="1"/>
+<pin id="387" dir="0" index="32" bw="16" slack="1"/>
+<pin id="388" dir="0" index="33" bw="16" slack="1"/>
+<pin id="389" dir="0" index="34" bw="16" slack="1"/>
+<pin id="390" dir="0" index="35" bw="16" slack="1"/>
+<pin id="391" dir="0" index="36" bw="16" slack="1"/>
+<pin id="392" dir="0" index="37" bw="16" slack="1"/>
+<pin id="393" dir="0" index="38" bw="16" slack="1"/>
+<pin id="394" dir="0" index="39" bw="64" slack="0"/>
+<pin id="395" dir="0" index="40" bw="29" slack="1"/>
+<pin id="396" dir="0" index="41" bw="32" slack="1"/>
+<pin id="397" dir="0" index="42" bw="32" slack="1"/>
+<pin id="398" dir="1" index="43" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln88/2 "/>
+</bind>
+</comp>
+
+<comp id="406" class="1004" name="tmp_fu_406">
+<pin_list>
+<pin id="407" dir="0" index="0" bw="1" slack="0"/>
+<pin id="408" dir="0" index="1" bw="6" slack="0"/>
+<pin id="409" dir="0" index="2" bw="4" slack="0"/>
+<pin id="410" dir="1" index="3" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="bitselect(1000) " fcode="bitselect"/>
+<opset="tmp/2 "/>
+</bind>
+</comp>
+
+<comp id="414" class="1004" name="ch_fu_414">
+<pin_list>
+<pin id="415" dir="0" index="0" bw="6" slack="0"/>
+<pin id="416" dir="0" index="1" bw="5" slack="0"/>
+<pin id="417" dir="1" index="2" bw="6" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="ch/2 "/>
+</bind>
+</comp>
+
+<comp id="420" class="1005" name="col_read_reg_420">
+<pin_list>
+<pin id="421" dir="0" index="0" bw="32" slack="1"/>
+<pin id="422" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="col_read "/>
+</bind>
+</comp>
+
+<comp id="425" class="1005" name="row_read_reg_425">
+<pin_list>
+<pin id="426" dir="0" index="0" bw="32" slack="1"/>
+<pin id="427" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="row_read "/>
+</bind>
+</comp>
+
+<comp id="430" class="1005" name="bias_buff_31_V_read_1_reg_430">
+<pin_list>
+<pin id="431" dir="0" index="0" bw="16" slack="1"/>
+<pin id="432" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_31_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="435" class="1005" name="bias_buff_30_V_read_1_reg_435">
+<pin_list>
+<pin id="436" dir="0" index="0" bw="16" slack="1"/>
+<pin id="437" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_30_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="440" class="1005" name="bias_buff_29_V_read_1_reg_440">
+<pin_list>
+<pin id="441" dir="0" index="0" bw="16" slack="1"/>
+<pin id="442" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_29_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="445" class="1005" name="bias_buff_28_V_read_1_reg_445">
+<pin_list>
+<pin id="446" dir="0" index="0" bw="16" slack="1"/>
+<pin id="447" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_28_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="450" class="1005" name="bias_buff_27_V_read_1_reg_450">
+<pin_list>
+<pin id="451" dir="0" index="0" bw="16" slack="1"/>
+<pin id="452" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_27_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="455" class="1005" name="bias_buff_26_V_read_1_reg_455">
+<pin_list>
+<pin id="456" dir="0" index="0" bw="16" slack="1"/>
+<pin id="457" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_26_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="460" class="1005" name="bias_buff_25_V_read_1_reg_460">
+<pin_list>
+<pin id="461" dir="0" index="0" bw="16" slack="1"/>
+<pin id="462" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_25_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="465" class="1005" name="bias_buff_24_V_read_1_reg_465">
+<pin_list>
+<pin id="466" dir="0" index="0" bw="16" slack="1"/>
+<pin id="467" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_24_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="470" class="1005" name="bias_buff_23_V_read_1_reg_470">
+<pin_list>
+<pin id="471" dir="0" index="0" bw="16" slack="1"/>
+<pin id="472" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_23_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="475" class="1005" name="bias_buff_22_V_read_1_reg_475">
+<pin_list>
+<pin id="476" dir="0" index="0" bw="16" slack="1"/>
+<pin id="477" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_22_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="480" class="1005" name="bias_buff_21_V_read_1_reg_480">
+<pin_list>
+<pin id="481" dir="0" index="0" bw="16" slack="1"/>
+<pin id="482" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_21_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="485" class="1005" name="bias_buff_20_V_read_1_reg_485">
+<pin_list>
+<pin id="486" dir="0" index="0" bw="16" slack="1"/>
+<pin id="487" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_20_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="490" class="1005" name="bias_buff_19_V_read_1_reg_490">
+<pin_list>
+<pin id="491" dir="0" index="0" bw="16" slack="1"/>
+<pin id="492" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_19_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="495" class="1005" name="bias_buff_18_V_read_1_reg_495">
+<pin_list>
+<pin id="496" dir="0" index="0" bw="16" slack="1"/>
+<pin id="497" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_18_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="500" class="1005" name="bias_buff_17_V_read_1_reg_500">
+<pin_list>
+<pin id="501" dir="0" index="0" bw="16" slack="1"/>
+<pin id="502" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_17_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="505" class="1005" name="bias_buff_16_V_read_1_reg_505">
+<pin_list>
+<pin id="506" dir="0" index="0" bw="16" slack="1"/>
+<pin id="507" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_16_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="510" class="1005" name="bias_buff_15_V_read_1_reg_510">
+<pin_list>
+<pin id="511" dir="0" index="0" bw="16" slack="1"/>
+<pin id="512" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_15_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="515" class="1005" name="bias_buff_14_V_read_1_reg_515">
+<pin_list>
+<pin id="516" dir="0" index="0" bw="16" slack="1"/>
+<pin id="517" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_14_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="520" class="1005" name="bias_buff_13_V_read_1_reg_520">
+<pin_list>
+<pin id="521" dir="0" index="0" bw="16" slack="1"/>
+<pin id="522" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_13_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="525" class="1005" name="bias_buff_12_V_read_1_reg_525">
+<pin_list>
+<pin id="526" dir="0" index="0" bw="16" slack="1"/>
+<pin id="527" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_12_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="530" class="1005" name="bias_buff_11_V_read_1_reg_530">
+<pin_list>
+<pin id="531" dir="0" index="0" bw="16" slack="1"/>
+<pin id="532" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_11_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="535" class="1005" name="bias_buff_10_V_read_1_reg_535">
+<pin_list>
+<pin id="536" dir="0" index="0" bw="16" slack="1"/>
+<pin id="537" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_10_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="540" class="1005" name="bias_buff_9_V_read_1_reg_540">
+<pin_list>
+<pin id="541" dir="0" index="0" bw="16" slack="1"/>
+<pin id="542" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_9_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="545" class="1005" name="bias_buff_8_V_read_1_reg_545">
+<pin_list>
+<pin id="546" dir="0" index="0" bw="16" slack="1"/>
+<pin id="547" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_8_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="550" class="1005" name="bias_buff_7_V_read_1_reg_550">
+<pin_list>
+<pin id="551" dir="0" index="0" bw="16" slack="1"/>
+<pin id="552" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_7_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="555" class="1005" name="bias_buff_6_V_read_1_reg_555">
+<pin_list>
+<pin id="556" dir="0" index="0" bw="16" slack="1"/>
+<pin id="557" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_6_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="560" class="1005" name="bias_buff_5_V_read_1_reg_560">
+<pin_list>
+<pin id="561" dir="0" index="0" bw="16" slack="1"/>
+<pin id="562" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_5_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="565" class="1005" name="bias_buff_4_V_read_1_reg_565">
+<pin_list>
+<pin id="566" dir="0" index="0" bw="16" slack="1"/>
+<pin id="567" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_4_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="570" class="1005" name="bias_buff_3_V_read_1_reg_570">
+<pin_list>
+<pin id="571" dir="0" index="0" bw="16" slack="1"/>
+<pin id="572" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_3_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="575" class="1005" name="bias_buff_2_V_read_1_reg_575">
+<pin_list>
+<pin id="576" dir="0" index="0" bw="16" slack="1"/>
+<pin id="577" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_2_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="580" class="1005" name="bias_buff_1_V_read_1_reg_580">
+<pin_list>
+<pin id="581" dir="0" index="0" bw="16" slack="1"/>
+<pin id="582" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_1_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="585" class="1005" name="bias_buff_0_V_read_1_reg_585">
+<pin_list>
+<pin id="586" dir="0" index="0" bw="16" slack="1"/>
+<pin id="587" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="bias_buff_0_V_read_1 "/>
+</bind>
+</comp>
+
+<comp id="590" class="1005" name="out_V_offset_read_reg_590">
+<pin_list>
+<pin id="591" dir="0" index="0" bw="29" slack="1"/>
+<pin id="592" dir="1" index="1" bw="29" slack="1"/>
+</pin_list>
+<bind>
+<opset="out_V_offset_read "/>
+</bind>
+</comp>
+
+<comp id="595" class="1005" name="weight_V_offset_read_reg_595">
+<pin_list>
+<pin id="596" dir="0" index="0" bw="31" slack="1"/>
+<pin id="597" dir="1" index="1" bw="31" slack="1"/>
+</pin_list>
+<bind>
+<opset="weight_V_offset_read "/>
+</bind>
+</comp>
+
+<comp id="603" class="1005" name="ch_reg_603">
+<pin_list>
+<pin id="604" dir="0" index="0" bw="6" slack="0"/>
+<pin id="605" dir="1" index="1" bw="6" slack="0"/>
+</pin_list>
+<bind>
+<opset="ch "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="130"><net_src comp="82" pin="0"/><net_sink comp="126" pin=0"/></net>
+
+<net id="131"><net_src comp="80" pin="0"/><net_sink comp="126" pin=1"/></net>
+
+<net id="136"><net_src comp="82" pin="0"/><net_sink comp="132" pin=0"/></net>
+
+<net id="137"><net_src comp="78" pin="0"/><net_sink comp="132" pin=1"/></net>
+
+<net id="142"><net_src comp="84" pin="0"/><net_sink comp="138" pin=0"/></net>
+
+<net id="143"><net_src comp="76" pin="0"/><net_sink comp="138" pin=1"/></net>
+
+<net id="148"><net_src comp="84" pin="0"/><net_sink comp="144" pin=0"/></net>
+
+<net id="149"><net_src comp="74" pin="0"/><net_sink comp="144" pin=1"/></net>
+
+<net id="154"><net_src comp="84" pin="0"/><net_sink comp="150" pin=0"/></net>
+
+<net id="155"><net_src comp="72" pin="0"/><net_sink comp="150" pin=1"/></net>
+
+<net id="160"><net_src comp="84" pin="0"/><net_sink comp="156" pin=0"/></net>
+
+<net id="161"><net_src comp="70" pin="0"/><net_sink comp="156" pin=1"/></net>
+
+<net id="166"><net_src comp="84" pin="0"/><net_sink comp="162" pin=0"/></net>
+
+<net id="167"><net_src comp="68" pin="0"/><net_sink comp="162" pin=1"/></net>
+
+<net id="172"><net_src comp="84" pin="0"/><net_sink comp="168" pin=0"/></net>
+
+<net id="173"><net_src comp="66" pin="0"/><net_sink comp="168" pin=1"/></net>
+
+<net id="178"><net_src comp="84" pin="0"/><net_sink comp="174" pin=0"/></net>
+
+<net id="179"><net_src comp="64" pin="0"/><net_sink comp="174" pin=1"/></net>
+
+<net id="184"><net_src comp="84" pin="0"/><net_sink comp="180" pin=0"/></net>
+
+<net id="185"><net_src comp="62" pin="0"/><net_sink comp="180" pin=1"/></net>
+
+<net id="190"><net_src comp="84" pin="0"/><net_sink comp="186" pin=0"/></net>
+
+<net id="191"><net_src comp="60" pin="0"/><net_sink comp="186" pin=1"/></net>
+
+<net id="196"><net_src comp="84" pin="0"/><net_sink comp="192" pin=0"/></net>
+
+<net id="197"><net_src comp="58" pin="0"/><net_sink comp="192" pin=1"/></net>
+
+<net id="202"><net_src comp="84" pin="0"/><net_sink comp="198" pin=0"/></net>
+
+<net id="203"><net_src comp="56" pin="0"/><net_sink comp="198" pin=1"/></net>
+
+<net id="208"><net_src comp="84" pin="0"/><net_sink comp="204" pin=0"/></net>
+
+<net id="209"><net_src comp="54" pin="0"/><net_sink comp="204" pin=1"/></net>
+
+<net id="214"><net_src comp="84" pin="0"/><net_sink comp="210" pin=0"/></net>
+
+<net id="215"><net_src comp="52" pin="0"/><net_sink comp="210" pin=1"/></net>
+
+<net id="220"><net_src comp="84" pin="0"/><net_sink comp="216" pin=0"/></net>
+
+<net id="221"><net_src comp="50" pin="0"/><net_sink comp="216" pin=1"/></net>
+
+<net id="226"><net_src comp="84" pin="0"/><net_sink comp="222" pin=0"/></net>
+
+<net id="227"><net_src comp="48" pin="0"/><net_sink comp="222" pin=1"/></net>
+
+<net id="232"><net_src comp="84" pin="0"/><net_sink comp="228" pin=0"/></net>
+
+<net id="233"><net_src comp="46" pin="0"/><net_sink comp="228" pin=1"/></net>
+
+<net id="238"><net_src comp="84" pin="0"/><net_sink comp="234" pin=0"/></net>
+
+<net id="239"><net_src comp="44" pin="0"/><net_sink comp="234" pin=1"/></net>
+
+<net id="244"><net_src comp="84" pin="0"/><net_sink comp="240" pin=0"/></net>
+
+<net id="245"><net_src comp="42" pin="0"/><net_sink comp="240" pin=1"/></net>
+
+<net id="250"><net_src comp="84" pin="0"/><net_sink comp="246" pin=0"/></net>
+
+<net id="251"><net_src comp="40" pin="0"/><net_sink comp="246" pin=1"/></net>
+
+<net id="256"><net_src comp="84" pin="0"/><net_sink comp="252" pin=0"/></net>
+
+<net id="257"><net_src comp="38" pin="0"/><net_sink comp="252" pin=1"/></net>
+
+<net id="262"><net_src comp="84" pin="0"/><net_sink comp="258" pin=0"/></net>
+
+<net id="263"><net_src comp="36" pin="0"/><net_sink comp="258" pin=1"/></net>
+
+<net id="268"><net_src comp="84" pin="0"/><net_sink comp="264" pin=0"/></net>
+
+<net id="269"><net_src comp="34" pin="0"/><net_sink comp="264" pin=1"/></net>
+
+<net id="274"><net_src comp="84" pin="0"/><net_sink comp="270" pin=0"/></net>
+
+<net id="275"><net_src comp="32" pin="0"/><net_sink comp="270" pin=1"/></net>
+
+<net id="280"><net_src comp="84" pin="0"/><net_sink comp="276" pin=0"/></net>
+
+<net id="281"><net_src comp="30" pin="0"/><net_sink comp="276" pin=1"/></net>
+
+<net id="286"><net_src comp="84" pin="0"/><net_sink comp="282" pin=0"/></net>
+
+<net id="287"><net_src comp="28" pin="0"/><net_sink comp="282" pin=1"/></net>
+
+<net id="292"><net_src comp="84" pin="0"/><net_sink comp="288" pin=0"/></net>
+
+<net id="293"><net_src comp="26" pin="0"/><net_sink comp="288" pin=1"/></net>
+
+<net id="298"><net_src comp="84" pin="0"/><net_sink comp="294" pin=0"/></net>
+
+<net id="299"><net_src comp="24" pin="0"/><net_sink comp="294" pin=1"/></net>
+
+<net id="304"><net_src comp="84" pin="0"/><net_sink comp="300" pin=0"/></net>
+
+<net id="305"><net_src comp="22" pin="0"/><net_sink comp="300" pin=1"/></net>
+
+<net id="310"><net_src comp="84" pin="0"/><net_sink comp="306" pin=0"/></net>
+
+<net id="311"><net_src comp="20" pin="0"/><net_sink comp="306" pin=1"/></net>
+
+<net id="316"><net_src comp="84" pin="0"/><net_sink comp="312" pin=0"/></net>
+
+<net id="317"><net_src comp="18" pin="0"/><net_sink comp="312" pin=1"/></net>
+
+<net id="322"><net_src comp="84" pin="0"/><net_sink comp="318" pin=0"/></net>
+
+<net id="323"><net_src comp="16" pin="0"/><net_sink comp="318" pin=1"/></net>
+
+<net id="328"><net_src comp="84" pin="0"/><net_sink comp="324" pin=0"/></net>
+
+<net id="329"><net_src comp="14" pin="0"/><net_sink comp="324" pin=1"/></net>
+
+<net id="334"><net_src comp="86" pin="0"/><net_sink comp="330" pin=0"/></net>
+
+<net id="335"><net_src comp="6" pin="0"/><net_sink comp="330" pin=1"/></net>
+
+<net id="340"><net_src comp="88" pin="0"/><net_sink comp="336" pin=0"/></net>
+
+<net id="341"><net_src comp="2" pin="0"/><net_sink comp="336" pin=1"/></net>
+
+<net id="345"><net_src comp="112" pin="0"/><net_sink comp="342" pin=0"/></net>
+
+<net id="352"><net_src comp="342" pin="1"/><net_sink comp="346" pin=0"/></net>
+
+<net id="353"><net_src comp="346" pin="4"/><net_sink comp="342" pin=0"/></net>
+
+<net id="399"><net_src comp="122" pin="0"/><net_sink comp="354" pin=0"/></net>
+
+<net id="400"><net_src comp="0" pin="0"/><net_sink comp="354" pin=1"/></net>
+
+<net id="401"><net_src comp="346" pin="4"/><net_sink comp="354" pin=3"/></net>
+
+<net id="402"><net_src comp="8" pin="0"/><net_sink comp="354" pin=4"/></net>
+
+<net id="403"><net_src comp="10" pin="0"/><net_sink comp="354" pin=5"/></net>
+
+<net id="404"><net_src comp="12" pin="0"/><net_sink comp="354" pin=6"/></net>
+
+<net id="405"><net_src comp="4" pin="0"/><net_sink comp="354" pin=39"/></net>
+
+<net id="411"><net_src comp="114" pin="0"/><net_sink comp="406" pin=0"/></net>
+
+<net id="412"><net_src comp="346" pin="4"/><net_sink comp="406" pin=1"/></net>
+
+<net id="413"><net_src comp="116" pin="0"/><net_sink comp="406" pin=2"/></net>
+
+<net id="418"><net_src comp="346" pin="4"/><net_sink comp="414" pin=0"/></net>
+
+<net id="419"><net_src comp="124" pin="0"/><net_sink comp="414" pin=1"/></net>
+
+<net id="423"><net_src comp="126" pin="2"/><net_sink comp="420" pin=0"/></net>
+
+<net id="424"><net_src comp="420" pin="1"/><net_sink comp="354" pin=42"/></net>
+
+<net id="428"><net_src comp="132" pin="2"/><net_sink comp="425" pin=0"/></net>
+
+<net id="429"><net_src comp="425" pin="1"/><net_sink comp="354" pin=41"/></net>
+
+<net id="433"><net_src comp="138" pin="2"/><net_sink comp="430" pin=0"/></net>
+
+<net id="434"><net_src comp="430" pin="1"/><net_sink comp="354" pin=38"/></net>
+
+<net id="438"><net_src comp="144" pin="2"/><net_sink comp="435" pin=0"/></net>
+
+<net id="439"><net_src comp="435" pin="1"/><net_sink comp="354" pin=37"/></net>
+
+<net id="443"><net_src comp="150" pin="2"/><net_sink comp="440" pin=0"/></net>
+
+<net id="444"><net_src comp="440" pin="1"/><net_sink comp="354" pin=36"/></net>
+
+<net id="448"><net_src comp="156" pin="2"/><net_sink comp="445" pin=0"/></net>
+
+<net id="449"><net_src comp="445" pin="1"/><net_sink comp="354" pin=35"/></net>
+
+<net id="453"><net_src comp="162" pin="2"/><net_sink comp="450" pin=0"/></net>
+
+<net id="454"><net_src comp="450" pin="1"/><net_sink comp="354" pin=34"/></net>
+
+<net id="458"><net_src comp="168" pin="2"/><net_sink comp="455" pin=0"/></net>
+
+<net id="459"><net_src comp="455" pin="1"/><net_sink comp="354" pin=33"/></net>
+
+<net id="463"><net_src comp="174" pin="2"/><net_sink comp="460" pin=0"/></net>
+
+<net id="464"><net_src comp="460" pin="1"/><net_sink comp="354" pin=32"/></net>
+
+<net id="468"><net_src comp="180" pin="2"/><net_sink comp="465" pin=0"/></net>
+
+<net id="469"><net_src comp="465" pin="1"/><net_sink comp="354" pin=31"/></net>
+
+<net id="473"><net_src comp="186" pin="2"/><net_sink comp="470" pin=0"/></net>
+
+<net id="474"><net_src comp="470" pin="1"/><net_sink comp="354" pin=30"/></net>
+
+<net id="478"><net_src comp="192" pin="2"/><net_sink comp="475" pin=0"/></net>
+
+<net id="479"><net_src comp="475" pin="1"/><net_sink comp="354" pin=29"/></net>
+
+<net id="483"><net_src comp="198" pin="2"/><net_sink comp="480" pin=0"/></net>
+
+<net id="484"><net_src comp="480" pin="1"/><net_sink comp="354" pin=28"/></net>
+
+<net id="488"><net_src comp="204" pin="2"/><net_sink comp="485" pin=0"/></net>
+
+<net id="489"><net_src comp="485" pin="1"/><net_sink comp="354" pin=27"/></net>
+
+<net id="493"><net_src comp="210" pin="2"/><net_sink comp="490" pin=0"/></net>
+
+<net id="494"><net_src comp="490" pin="1"/><net_sink comp="354" pin=26"/></net>
+
+<net id="498"><net_src comp="216" pin="2"/><net_sink comp="495" pin=0"/></net>
+
+<net id="499"><net_src comp="495" pin="1"/><net_sink comp="354" pin=25"/></net>
+
+<net id="503"><net_src comp="222" pin="2"/><net_sink comp="500" pin=0"/></net>
+
+<net id="504"><net_src comp="500" pin="1"/><net_sink comp="354" pin=24"/></net>
+
+<net id="508"><net_src comp="228" pin="2"/><net_sink comp="505" pin=0"/></net>
+
+<net id="509"><net_src comp="505" pin="1"/><net_sink comp="354" pin=23"/></net>
+
+<net id="513"><net_src comp="234" pin="2"/><net_sink comp="510" pin=0"/></net>
+
+<net id="514"><net_src comp="510" pin="1"/><net_sink comp="354" pin=22"/></net>
+
+<net id="518"><net_src comp="240" pin="2"/><net_sink comp="515" pin=0"/></net>
+
+<net id="519"><net_src comp="515" pin="1"/><net_sink comp="354" pin=21"/></net>
+
+<net id="523"><net_src comp="246" pin="2"/><net_sink comp="520" pin=0"/></net>
+
+<net id="524"><net_src comp="520" pin="1"/><net_sink comp="354" pin=20"/></net>
+
+<net id="528"><net_src comp="252" pin="2"/><net_sink comp="525" pin=0"/></net>
+
+<net id="529"><net_src comp="525" pin="1"/><net_sink comp="354" pin=19"/></net>
+
+<net id="533"><net_src comp="258" pin="2"/><net_sink comp="530" pin=0"/></net>
+
+<net id="534"><net_src comp="530" pin="1"/><net_sink comp="354" pin=18"/></net>
+
+<net id="538"><net_src comp="264" pin="2"/><net_sink comp="535" pin=0"/></net>
+
+<net id="539"><net_src comp="535" pin="1"/><net_sink comp="354" pin=17"/></net>
+
+<net id="543"><net_src comp="270" pin="2"/><net_sink comp="540" pin=0"/></net>
+
+<net id="544"><net_src comp="540" pin="1"/><net_sink comp="354" pin=16"/></net>
+
+<net id="548"><net_src comp="276" pin="2"/><net_sink comp="545" pin=0"/></net>
+
+<net id="549"><net_src comp="545" pin="1"/><net_sink comp="354" pin=15"/></net>
+
+<net id="553"><net_src comp="282" pin="2"/><net_sink comp="550" pin=0"/></net>
+
+<net id="554"><net_src comp="550" pin="1"/><net_sink comp="354" pin=14"/></net>
+
+<net id="558"><net_src comp="288" pin="2"/><net_sink comp="555" pin=0"/></net>
+
+<net id="559"><net_src comp="555" pin="1"/><net_sink comp="354" pin=13"/></net>
+
+<net id="563"><net_src comp="294" pin="2"/><net_sink comp="560" pin=0"/></net>
+
+<net id="564"><net_src comp="560" pin="1"/><net_sink comp="354" pin=12"/></net>
+
+<net id="568"><net_src comp="300" pin="2"/><net_sink comp="565" pin=0"/></net>
+
+<net id="569"><net_src comp="565" pin="1"/><net_sink comp="354" pin=11"/></net>
+
+<net id="573"><net_src comp="306" pin="2"/><net_sink comp="570" pin=0"/></net>
+
+<net id="574"><net_src comp="570" pin="1"/><net_sink comp="354" pin=10"/></net>
+
+<net id="578"><net_src comp="312" pin="2"/><net_sink comp="575" pin=0"/></net>
+
+<net id="579"><net_src comp="575" pin="1"/><net_sink comp="354" pin=9"/></net>
+
+<net id="583"><net_src comp="318" pin="2"/><net_sink comp="580" pin=0"/></net>
+
+<net id="584"><net_src comp="580" pin="1"/><net_sink comp="354" pin=8"/></net>
+
+<net id="588"><net_src comp="324" pin="2"/><net_sink comp="585" pin=0"/></net>
+
+<net id="589"><net_src comp="585" pin="1"/><net_sink comp="354" pin=7"/></net>
+
+<net id="593"><net_src comp="330" pin="2"/><net_sink comp="590" pin=0"/></net>
+
+<net id="594"><net_src comp="590" pin="1"/><net_sink comp="354" pin=40"/></net>
+
+<net id="598"><net_src comp="336" pin="2"/><net_sink comp="595" pin=0"/></net>
+
+<net id="599"><net_src comp="595" pin="1"/><net_sink comp="354" pin=2"/></net>
+
+<net id="606"><net_src comp="414" pin="2"/><net_sink comp="603" pin=0"/></net>
+
+<net id="607"><net_src comp="603" pin="1"/><net_sink comp="346" pin=2"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: out_V | {2 3 }
+ - Input state : 
+	Port: compute_output : weight_V | {2 3 }
+	Port: compute_output : weight_V_offset | {1 }
+	Port: compute_output : out_V_offset | {1 }
+	Port: compute_output : fm_in_buff_0_V | {2 3 }
+	Port: compute_output : fm_in_buff_1_V | {2 3 }
+	Port: compute_output : fm_in_buff_2_V | {2 3 }
+	Port: compute_output : bias_buff_0_V_read | {1 }
+	Port: compute_output : bias_buff_1_V_read | {1 }
+	Port: compute_output : bias_buff_2_V_read | {1 }
+	Port: compute_output : bias_buff_3_V_read | {1 }
+	Port: compute_output : bias_buff_4_V_read | {1 }
+	Port: compute_output : bias_buff_5_V_read | {1 }
+	Port: compute_output : bias_buff_6_V_read | {1 }
+	Port: compute_output : bias_buff_7_V_read | {1 }
+	Port: compute_output : bias_buff_8_V_read | {1 }
+	Port: compute_output : bias_buff_9_V_read | {1 }
+	Port: compute_output : bias_buff_10_V_read | {1 }
+	Port: compute_output : bias_buff_11_V_read | {1 }
+	Port: compute_output : bias_buff_12_V_read | {1 }
+	Port: compute_output : bias_buff_13_V_read | {1 }
+	Port: compute_output : bias_buff_14_V_read | {1 }
+	Port: compute_output : bias_buff_15_V_read | {1 }
+	Port: compute_output : bias_buff_16_V_read | {1 }
+	Port: compute_output : bias_buff_17_V_read | {1 }
+	Port: compute_output : bias_buff_18_V_read | {1 }
+	Port: compute_output : bias_buff_19_V_read | {1 }
+	Port: compute_output : bias_buff_20_V_read | {1 }
+	Port: compute_output : bias_buff_21_V_read | {1 }
+	Port: compute_output : bias_buff_22_V_read | {1 }
+	Port: compute_output : bias_buff_23_V_read | {1 }
+	Port: compute_output : bias_buff_24_V_read | {1 }
+	Port: compute_output : bias_buff_25_V_read | {1 }
+	Port: compute_output : bias_buff_26_V_read | {1 }
+	Port: compute_output : bias_buff_27_V_read | {1 }
+	Port: compute_output : bias_buff_28_V_read | {1 }
+	Port: compute_output : bias_buff_29_V_read | {1 }
+	Port: compute_output : bias_buff_30_V_read | {1 }
+	Port: compute_output : bias_buff_31_V_read | {1 }
+	Port: compute_output : row | {1 }
+	Port: compute_output : col | {1 }
+  - Chain level:
+	State 1
+	State 2
+		tmp : 1
+		br_ln84 : 2
+		call_ln88 : 1
+		ch : 1
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|-----------------------------------|---------|---------|---------|---------|---------|---------|
+| Operation|          Functional Unit          |   BRAM  |  DSP48E |  Delay  |    FF   |   LUT   |   URAM  |
+|----------|-----------------------------------|---------|---------|---------|---------|---------|---------|
+|   call   |    grp_dataflow_in_loop_fu_354    |    8    |    28   |  64.636 |   8877  |   6304  |    0    |
+|----------|-----------------------------------|---------|---------|---------|---------|---------|---------|
+|    add   |             ch_fu_414             |    0    |    0    |    0    |    0    |    6    |    0    |
+|----------|-----------------------------------|---------|---------|---------|---------|---------|---------|
+|          |        col_read_read_fu_126       |    0    |    0    |    0    |    0    |    0    |    0    |
+|          |        row_read_read_fu_132       |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_31_V_read_1_read_fu_138 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_30_V_read_1_read_fu_144 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_29_V_read_1_read_fu_150 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_28_V_read_1_read_fu_156 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_27_V_read_1_read_fu_162 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_26_V_read_1_read_fu_168 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_25_V_read_1_read_fu_174 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_24_V_read_1_read_fu_180 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_23_V_read_1_read_fu_186 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_22_V_read_1_read_fu_192 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_21_V_read_1_read_fu_198 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_20_V_read_1_read_fu_204 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_19_V_read_1_read_fu_210 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_18_V_read_1_read_fu_216 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_17_V_read_1_read_fu_222 |    0    |    0    |    0    |    0    |    0    |    0    |
+|   read   | bias_buff_16_V_read_1_read_fu_228 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_15_V_read_1_read_fu_234 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_14_V_read_1_read_fu_240 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_13_V_read_1_read_fu_246 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_12_V_read_1_read_fu_252 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_11_V_read_1_read_fu_258 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          | bias_buff_10_V_read_1_read_fu_264 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          |  bias_buff_9_V_read_1_read_fu_270 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          |  bias_buff_8_V_read_1_read_fu_276 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          |  bias_buff_7_V_read_1_read_fu_282 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          |  bias_buff_6_V_read_1_read_fu_288 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          |  bias_buff_5_V_read_1_read_fu_294 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          |  bias_buff_4_V_read_1_read_fu_300 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          |  bias_buff_3_V_read_1_read_fu_306 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          |  bias_buff_2_V_read_1_read_fu_312 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          |  bias_buff_1_V_read_1_read_fu_318 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          |  bias_buff_0_V_read_1_read_fu_324 |    0    |    0    |    0    |    0    |    0    |    0    |
+|          |   out_V_offset_read_read_fu_330   |    0    |    0    |    0    |    0    |    0    |    0    |
+|          |  weight_V_offset_read_read_fu_336 |    0    |    0    |    0    |    0    |    0    |    0    |
+|----------|-----------------------------------|---------|---------|---------|---------|---------|---------|
+| bitselect|             tmp_fu_406            |    0    |    0    |    0    |    0    |    0    |    0    |
+|----------|-----------------------------------|---------|---------|---------|---------|---------|---------|
+|   Total  |                                   |    8    |    28   |  64.636 |   8877  |   6310  |    0    |
+|----------|-----------------------------------|---------|---------|---------|---------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++-----------------------------+--------+
+|                             |   FF   |
++-----------------------------+--------+
+| bias_buff_0_V_read_1_reg_585|   16   |
+|bias_buff_10_V_read_1_reg_535|   16   |
+|bias_buff_11_V_read_1_reg_530|   16   |
+|bias_buff_12_V_read_1_reg_525|   16   |
+|bias_buff_13_V_read_1_reg_520|   16   |
+|bias_buff_14_V_read_1_reg_515|   16   |
+|bias_buff_15_V_read_1_reg_510|   16   |
+|bias_buff_16_V_read_1_reg_505|   16   |
+|bias_buff_17_V_read_1_reg_500|   16   |
+|bias_buff_18_V_read_1_reg_495|   16   |
+|bias_buff_19_V_read_1_reg_490|   16   |
+| bias_buff_1_V_read_1_reg_580|   16   |
+|bias_buff_20_V_read_1_reg_485|   16   |
+|bias_buff_21_V_read_1_reg_480|   16   |
+|bias_buff_22_V_read_1_reg_475|   16   |
+|bias_buff_23_V_read_1_reg_470|   16   |
+|bias_buff_24_V_read_1_reg_465|   16   |
+|bias_buff_25_V_read_1_reg_460|   16   |
+|bias_buff_26_V_read_1_reg_455|   16   |
+|bias_buff_27_V_read_1_reg_450|   16   |
+|bias_buff_28_V_read_1_reg_445|   16   |
+|bias_buff_29_V_read_1_reg_440|   16   |
+| bias_buff_2_V_read_1_reg_575|   16   |
+|bias_buff_30_V_read_1_reg_435|   16   |
+|bias_buff_31_V_read_1_reg_430|   16   |
+| bias_buff_3_V_read_1_reg_570|   16   |
+| bias_buff_4_V_read_1_reg_565|   16   |
+| bias_buff_5_V_read_1_reg_560|   16   |
+| bias_buff_6_V_read_1_reg_555|   16   |
+| bias_buff_7_V_read_1_reg_550|   16   |
+| bias_buff_8_V_read_1_reg_545|   16   |
+| bias_buff_9_V_read_1_reg_540|   16   |
+|        ch_0_i_reg_342       |    6   |
+|          ch_reg_603         |    6   |
+|       col_read_reg_420      |   32   |
+|  out_V_offset_read_reg_590  |   29   |
+|       row_read_reg_425      |   32   |
+| weight_V_offset_read_reg_595|   31   |
++-----------------------------+--------+
+|            Total            |   648  |
++-----------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|----------------|------|------|------|--------||---------||---------|
+|      Comp      |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|----------------|------|------|------|--------||---------||---------|
+| ch_0_i_reg_342 |  p0  |   2  |   6  |   12   ||    3    |
+|----------------|------|------|------|--------||---------||---------|
+|      Total     |      |      |      |   12   ||  0.466  ||    3    |
+|----------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+--------+
+|           |  BRAM  | DSP48E |  Delay |   FF   |   LUT  |  URAM  |
++-----------+--------+--------+--------+--------+--------+--------+
+|  Function |    8   |   28   |   64   |  8877  |  6310  |    0   |
+|   Memory  |    -   |    -   |    -   |    -   |    -   |    -   |
+|Multiplexer|    -   |    -   |    0   |    -   |    3   |    -   |
+|  Register |    -   |    -   |    -   |   648  |    -   |    -   |
++-----------+--------+--------+--------+--------+--------+--------+
+|   Total   |    8   |   28   |   65   |  9525  |  6313  |    0   |
++-----------+--------+--------+--------+--------+--------+--------+

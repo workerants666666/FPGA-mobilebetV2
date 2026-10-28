@@ -1,0 +1,117 @@
+[
+  {
+    "path": "app_src/src/camera_detection.c",
+    "original_sha256": "3f8f3bba56a42191af957955b66a79744bcfb0d172550c5e22994badbbbbe2d0",
+    "migrated_sha256": "8db004037e57cf519937449ac486b9d0d05c69464aae9f2ae7c8d7c4a112a6ec"
+  },
+  {
+    "path": "app_src/src/COMMON.h",
+    "original_sha256": "0765bc49c21ae32c6b108bf883e9c5ca5bfc9cf3571619ee48194330e8ad2015",
+    "migrated_sha256": "487e342f64e1b3423070cd4821153ad36a027a97dbfbd97b14dd0dff3e76a189"
+  },
+  {
+    "path": "app_src/src/lscript.ld",
+    "original_sha256": "0d68a09af65fe2e239e4a618c97f3b68a2cb908afd8fdf91c26348f2cff06e16",
+    "migrated_sha256": "b0e886772ea05f814fe7d7b1e96b6f72c79266fb130a7623da08a619175e553e"
+  },
+  {
+    "path": "app_src/src/main.c",
+    "original_sha256": "5d208500e5f33d4bc531034ef8dc5ada0b9eac34d66d1f9194a3b7998781a218",
+    "migrated_sha256": "2ebf0c5e41dc903fae23116460a1d829b6a5480292c2b0965adb615eca110e10"
+  },
+  {
+    "path": "app_src/src/mess.c",
+    "original_sha256": "facea5b6016d7512c79ad0cd9ce283b28bda19c17e30d8d6a15b149934d50258",
+    "migrated_sha256": "8e5a63444ef420702674edb9cbff66f9f2eda98806f97716b5ac0d80e1f36bfb"
+  },
+  {
+    "path": "app_src/src/mess.h",
+    "original_sha256": "6698a6b3fd53d11fe52738fd7c145b82d5e93e5e0f3fdddecd8af5fc411925d6",
+    "migrated_sha256": "70edb5ae0156caba4f930cdc5a2e89167783ffd9460ae44cc6686bcf8f35d4ec"
+  },
+  {
+    "path": "app_src/Lib/IIC/IIC.c",
+    "original_sha256": "6dfb41137aff8a21a5a2c7c3cbbc1cab52d32d4c48947806f78ae122aa1c5a17",
+    "migrated_sha256": "3227d678588c8b3b5de32e8889f2940d27969a222109730a464c9bb461ae2c3b"
+  },
+  {
+    "path": "app_src/Lib/IIC/IIC.h",
+    "original_sha256": "609fe5449a6b97e84a6a8085a7b201155108f87ebe0a65b5229cfa7d71c335ad",
+    "migrated_sha256": "259848753ffffdc5d71768daf93e84afaa8a68fbdc72e4967576dc9975a65e39"
+  },
+  {
+    "path": "app_src/Lib/LCD/lcd.c",
+    "original_sha256": "f6f66e09e9b326b52ed69c00e3c9690531c617096edc5d0731c25829e952a342",
+    "migrated_sha256": "59e8bb94e8625804bf5734e4aa61676361c32d4bddf55a721ff3610008500636"
+  },
+  {
+    "path": "app_src/Lib/LCD/lcd.h",
+    "original_sha256": "cafaf48abcf8255837c3232d61c516c5c7cdd6fe81946103f920d553be1813ee",
+    "migrated_sha256": "456c8d96a54dabdbbc8db1afde5172862c5396654052fe7d132d29323ded4ca6"
+  },
+  {
+    "path": "app_src/Lib/LCD/vdma_api.c",
+    "original_sha256": "573408346e0a87a0e3569ed0ef2984e2ce3b5fa1148beee4366b21835d968a30",
+    "migrated_sha256": "84328819e6c3c694c8879ff5123753f0e59744a0a41f1d00394448917e96f770"
+  },
+  {
+    "path": "app_src/Lib/Net/inference.c",
+    "original_sha256": "81907d0bd585c32d8ad518bf3ab519db1a7797af1a8e10785e3804a7f65d0cec",
+    "migrated_sha256": "5f491f4e7279c401c91b2f5122b2b9020620e121ec093db95205c8962867ab04"
+  },
+  {
+    "path": "app_src/Lib/Net/layer.c",
+    "original_sha256": "7d03982d4c440bbb1ad8f50f688133e07ddd80c5c858d5850d5599053eb12685",
+    "migrated_sha256": "97bcffa1b98b291dd6d80794988cdd2d1e8c8bb66675dc3f9aa10d533184cee2"
+  },
+  {
+    "path": "app_src/Lib/Net/pl_conv.c",
+    "original_sha256": "607a7dd6c3b96818c672040292c37ec4d9dd5a30b3dc43309b9dcd83f49b3d53",
+    "migrated_sha256": "7143a559a2266e471ba6abb9d9154452685c0c07df1c50662b29f689bf4c4e05"
+  },
+  {
+    "path": "app_src/Lib/Net/pl_conv.h",
+    "original_sha256": "b681ec58118b10502e29c526f926e72fde103dce90942555f1226d06e85eb1bc",
+    "migrated_sha256": "5941c4ec5c53b5c3201c69e2e6a7f22946cfa1b2d38f549d0e4eb28846c46b4c"
+  },
+  {
+    "path": "app_src/Lib/Net/sd_io.c",
+    "original_sha256": "c6192aac3b0b8c0181cfb1a28b709355f7e45e3fcc51e1cd74a07f628a1e41ef",
+    "migrated_sha256": "c042d53a4f88576100a2959ac1272941ec34c2ae62ae6d51853c77431e31e35f"
+  },
+  {
+    "path": "app_src/Lib/Net/sd_io.h",
+    "original_sha256": "7367832a4162ecee1acdafd1fb15b84557a769c6e13696f1bb4c5cbc96e33231",
+    "migrated_sha256": "6e8ad5be9c67452e18c616a0f3277045906dbb6be2c9737311770a7de58cdd00"
+  },
+  {
+    "path": "app_src/Lib/OV5640/OV5640.c",
+    "original_sha256": "568d7d584d50cee7bb4c0407093b7950c87ab644555fe40dd7671a3f8f6c6ca2",
+    "migrated_sha256": "9e3d2001bff4569c096df5a2e7280b21bb24799d91ff2b4cefdddc159fa98fcc"
+  },
+  {
+    "path": "app_src/Lib/OV5640/vdma_api_ov5640.c",
+    "original_sha256": "eae3db71e7448ce85303f33e5b7cebd731ebf2d837e51ff24b8cec95f7044e68",
+    "migrated_sha256": "0e53410d54c9a63283e6b08020f8e8249bccb34356b46f9988d6ed7e625a0d7b"
+  },
+  {
+    "path": "app_src/Lib/SCU/SCU.h",
+    "original_sha256": "6eacfa7f3d923603db7df762ab729cd187a483e8e0afe37eb33d64a41635cd35",
+    "migrated_sha256": "9828ecba3f26d9056197e14e052af899bedadfe11dabf5e464aed9abcb237e99"
+  },
+  {
+    "path": "app_src/Lib/SCU/SUC.c",
+    "original_sha256": "43b948fc581c76ec7c2aa94cd536362e6108c1fe9deee6145cf3544ea2f21e22",
+    "migrated_sha256": "90b7a98d5a06c0b43fe8518d3d065c473621b9bfdc12516e7fa2ed4c8b33fb8a"
+  },
+  {
+    "path": "app_src/Lib/UART/UART.c",
+    "original_sha256": "97e8f7f723709bb4ebb463f24a98c183710f9a50feb750b7d00232749cddfbe7",
+    "migrated_sha256": "3acde777a4a67d184f64bc644d0ce3807b7a786654037a7d3b9437d138324108"
+  },
+  {
+    "path": "app_src/Lib/UART/UART.h",
+    "original_sha256": "79a61a920f2177ad974a9e338e581e36a3f047add6b50a1f4e2578feb407f688",
+    "migrated_sha256": "aa6aa64d2fa3eca5027a61000b1efb90f04471f2cc1d9a98ddf77e521ca6bc19"
+  }
+]

@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "compiler": "gcc.EXE (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r2) 15.1.0",
+  "cases": [
+    {
+      "flip": 0,
+      "status": "PASS",
+      "test": "PASS LCD_FLIP_DISPLAY=0: 313856 checks, 17267569 pixel writes, zero clipping/out-of-bounds",
+      "restart": "PASS restart: existing IMG00001..00004 preserved, IMG00005 saved; 35 checks",
+      "full_directory": "PASS full directory: all 99,999 names preserved, no wrap/overwrite; 5 checks",
+      "compile_command": [
+        "C:\\mingw64\\bin\\gcc.EXE",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-DLCD_FLIP_DISPLAY=0",
+        "-include",
+        "C:\\Users\\Lenovo\\Desktop\\FPGA\\vitis_2025_2\\tests\\lcd_mocks\\host_bsp.h",
+        "-IC:\\Users\\Lenovo\\Desktop\\FPGA\\vitis_2025_2\\tests\\lcd_mocks",
+        "-IC:\\Users\\Lenovo\\Desktop\\FPGA\\vitis_2025_2\\app_src\\src",
+        "-IC:\\Users\\Lenovo\\Desktop\\FPGA\\vitis_2025_2\\app_src\\Lib\\LCD",
+        "C:\\Users\\Lenovo\\Desktop\\FPGA\\vitis_2025_2\\tests\\test_lcd_ui.c",
+        "C:\\Users\\Lenovo\\Desktop\\FPGA\\vitis_2025_2\\app_src\\src\\mess.c",
+        "C:\\Users\\Lenovo\\Desktop\\FPGA\\vitis_2025_2\\tests\\.build\\lcd_ui\\actual_lcd_renderer.c",
+        "-o",
+        "C:\\Users\\Lenovo\\Desktop\\FPGA\\vitis_2025_2\\tests\\.build\\lcd_ui\\flip_0\\test_lcd_ui.exe"
+      ]
+    },
+    {
+      "flip": 1,
+      "status": "PASS",
+      "test": "PASS LCD_FLIP_DISPLAY=1: 313856 checks, 17267569 pixel writes, zero clipping/out-of-bounds",
+      "restart": "PASS restart: existing IMG00001..00004 preserved, IMG00005 saved; 35 checks",
+      "full_directory": "PASS full directory: all 99,999 names preserved, no wrap/overwrite; 5 checks",
+      "compile_command": [
+        "C:\\mingw64\\bin\\gcc.EXE",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-DLCD_FLIP_DISPLAY=1",
+        "-include",
+        "C:\\Users\\Lenovo\\Desktop\\FPGA\\vitis_2025_2\\tests\\lcd_mocks\\host_bsp.h",
+        "-IC:\\Users\\Lenovo\\Desktop\\FPGA\\vitis_2025_2\\tests\\lcd_mocks",
+        "-IC:\\Users\\Lenovo\\Desktop\\FPGA\\vitis_2025_2\\app_src\\src",
+        "-IC:\\Users\\Lenovo\\Desktop\\FPGA\\vitis_2025_2\\app_src\\Lib\\LCD",
+        "C:\\Users\\Lenovo\\Desktop\\FPGA\\vitis_2025_2\\tests\\test_lcd_ui.c",
+        "C:\\Users\\Lenovo\\Desktop\\FPGA\\vitis_2025_2\\app_src\\src\\mess.c",
+        "C:\\Users\\Lenovo\\Desktop\\FPGA\\vitis_2025_2\\tests\\.build\\lcd_ui\\actual_lcd_renderer.c",
+        "-o",
+        "C:\\Users\\Lenovo\\Desktop\\FPGA\\vitis_2025_2\\tests\\.build\\lcd_ui\\flip_1\\test_lcd_ui.exe"
+      ]
+    }
+  ],
+  "orientation_equivalence": "All seven actual framebuffers identical at LCD_FLIP_DISPLAY=0/1 after inverse rotation",
+  "sha256": {
+    "app_src\\src\\mess.c": "ca94c368c2664bd20f999d0e552cbd63e530556d7b2b37fa80c813c56eabdd37",
+    "app_src\\src\\mess.h": "0c7b113b6f15cfa4e1eb3c388182ec400aeffee5981c6f90335d1bf7aa1f9c83",
+    "app_src\\src\\main.c": "745ed9fe5aebbee7252612edbeba921ab87ece25b13499b8165949f84854f8dc",
+    "app_src\\src\\camera_detection.h": "fb1f9e2e2abb59d3eaed9d9559b0eff937db0e49a57e5ac4b8c1c37e93563295",
+    "app_src\\Lib\\LCD\\lcd.c": "59e8bb94e8625804bf5734e4aa61676361c32d4bddf55a721ff3610008500636",
+    "app_src\\Lib\\LCD\\font.h": "419cfaa8a28b139612fb94b9293c535345e8ee3b28e5acf4b70fcabe4e7cbfaa",
+    "tests\\test_lcd_ui.c": "c47a27deb5cff61b193d69178dfa35864c9c18db4a4813ffbd5c0057f0de5f75",
+    "tests\\run_lcd_ui_tests.py": "6c3e008c8f3f24f5666277108bf64c752c1a74062eab2eeb881bb5606fb6c254"
+  },
+  "scope": "Real mess.c/mess.h and LCD drawing/font code; mocked BSP, timer, inference, and filesystem adapter. Test BMP files written and verified on host.",
+  "limits": "Simulated camera image only. Does not establish physical touchscreen, SD-card reliability, DMA frame coherence, model accuracy, or board LCD output."
+}
